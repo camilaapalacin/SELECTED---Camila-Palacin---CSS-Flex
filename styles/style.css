@@ -1,0 +1,320 @@
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* GENERAL */
+
+body {
+    background-color: #F1F1EC;
+    color: #0A0A0A;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 30px;
+}
+
+footer {
+    background-color: #0A0A0A;
+    color: #F1F1EC;
+    padding: 30px;
+}
+
+
+/* TIPOGRAFÍA */
+
+h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 8rem;
+    line-height: 0.9;
+}
+
+h2 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 4rem;
+    line-height: 0.95;
+}
+
+h3 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 2rem;
+}
+
+p {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+
+/* LOGO */
+
+.logo-menu {
+    font-size: 1.5rem;
+}
+
+
+/* NAVBAR */
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+header nav a {
+    display: block;
+    color: #0A0A0A;
+    text-decoration: none;
+    border: 1px solid #0A0A0A;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+header nav a:hover {
+    background-color: #DDF497;
+}
+
+header nav a:active {
+    background-color: #0A0A0A;
+    color: #F1F1EC;
+}
+
+
+/* MARQUEE */
+
+.marquee {
+    padding: 20px 30px;
+    border-top: 1px solid #0A0A0A;
+    border-bottom: 1px solid #0A0A0A;
+}
+
+
+/* TODAS LAS SECCIONES */
+
+section {
+    padding: 24px 30px;
+    position: relative;
+}
+
+
+/* CONTENEDOR DE TEXTO */
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* HERO */
+
+.selected-hero {
+    background-color: #DDF497;
+    color: #0A0A0A;
+    display: flex;
+    align-items: center;
+    padding: 60px 30px;
+}
+
+.selected-hero .text-content {
+    max-width: 800px;
+}
+
+
+/* THE ART OF SELECTION */
+
+.the-art-of-selection {
+    background-color: #0A0A0A;
+    color: #F1F1EC;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 30px;
+}
+
+.the-art-of-selection .text-content {
+    flex: 1;
+}
+
+.the-art-of-selection figure {
+    width: 45%;
+}
+
+.the-art-of-selection figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+figure figcaption {
+    padding-top: 10px;
+}
+
+
+/* LATEST SELECTIONS */
+
+.latest-selections {
+    background-color: #0A0A0A;
+    color: #F1F1EC;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.cards-container {
+    display: flex;
+    gap: 30px;
+}
+
+.cards-container article {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #F1F1EC;
+}
+
+.cards-container figure {
+    margin-top: 20px;
+}
+
+.cards-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* WHAT WE SELECT */
+
+.what-we-select {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 60px 30px;
+}
+
+.selection-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.selection-grid article {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #0A0A0A;
+}
+
+
+/* NEXT SELECTION */
+
+.next-selection {
+    background-color: #DDF497;
+    color: #0A0A0A;
+    display: flex;
+    align-items: center;
+    padding: 60px 30px;
+}
+
+.next-selection .text-content {
+    max-width: 700px;
+}
+
+
+/* JOURNAL */
+
+.from-the-journal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 60px 30px;
+}
+
+.journal-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.journal-grid article {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #0A0A0A;
+}
+
+
+/* ABOUT */
+
+.about-section {
+    display: flex;
+    align-items: center;
+    padding: 60px 30px;
+}
+
+.about-section .text-content {
+    max-width: 850px;
+}
+
+
+.what-we-do {
+    background-color: #0A0A0A;
+    color: #F1F1EC;
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 60px 30px;
+}
+
+.what-we-do .text-content {
+    flex: 1;
+}
+
+.about-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    list-style-position: inside;
+}
+
+.about-list li {
+    padding: 20px;
+    border: 1px solid #F1F1EC;
+}
+
+
+.what-is-selected {
+    background-color: #DDF497;
+    color: #0A0A0A;
+    display: flex;
+    align-items: center;
+    padding: 60px 30px;
+}
+
+
+/* FOOTER */
+
+footer ul {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #F1F1EC;
+}
