@@ -16,6 +16,7 @@ body {
     font-family: "IBM Plex Mono", monospace;
     font-weight: 400;
     font-style: normal;
+    overflow-x: hidden;
 }
 
 section {
@@ -130,6 +131,7 @@ header nav a:active {
 
 .marquee {
     padding: 20px 30px;
+    overflow: hidden;
     border-top: 1px solid #0A0A0A;
     border-bottom: 1px solid #0A0A0A;
 }
@@ -328,6 +330,17 @@ header nav a:active {
     flex-direction: column;
     gap: 24px;
     padding: 40px 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.about-section > *,
+.what-we-do > *,
+.what-is-selected > * {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .about-section .text-content,
@@ -357,11 +370,14 @@ header nav a:active {
     width: 100%;
     padding: 0;
     list-style-position: inside;
+    box-sizing: border-box;
 }
 
 .about-list li {
     padding: 20px;
     border: 1px solid #F1F1EC;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
 }
 
 .what-is-selected {
@@ -495,6 +511,45 @@ header nav a:active {
 }
 
 /* RESPONSIVE */
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+    .about-section,
+    .what-we-do,
+    .what-is-selected {
+        flex-direction: column;
+        gap: 24px;
+        padding: 30px 20px;
+    }
+
+    .about-section > *,
+    .what-we-do > *,
+    .what-is-selected > * {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .about-section h1,
+    .about-section h2,
+    .what-we-do h1,
+    .what-we-do h2,
+    .what-is-selected h1,
+    .what-is-selected h2,
+    .about-section p,
+    .what-we-do p,
+    .what-is-selected p {
+        overflow-wrap: break-word;
+    }
+
+    .about-section img,
+    .what-we-do img,
+    .what-is-selected img {
+        width: 100%;
+        height: auto;
+    }
+}
 
 /* TABLET */
 
