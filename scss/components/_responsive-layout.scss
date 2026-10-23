@@ -1,0 +1,190 @@
+/* TABLET */
+
+@media (min-width: 640px) {
+
+.archive-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-areas:
+
+            "entry001 entry002"
+
+            "entry003 entry004"
+
+            "entry005 entry006";
+
+    }
+
+.journal-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-areas:
+
+            "article-one article-two"
+
+            "article-three article-three";
+
+    }
+
+}
+
+/* TABLET AND DESKTOP */
+
+@media (min-width: 768px) {
+
+.cards-container {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    }
+
+}
+
+/* DESKTOP — LAYOUT */
+
+@media (min-width: 1024px) {
+
+    /* HEADER */
+
+.selected-header {
+
+        flex-direction: row;
+
+        flex-wrap: nowrap;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding: 20px 30px;
+
+    }
+
+    /* THE ART OF SELECTION */
+
+.the-art-of-selection {
+
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+
+        grid-template-areas: "text image";
+
+        align-items: center;
+
+        gap: 50px;
+
+        padding: 60px 30px;
+
+    }
+
+/* FEATURED CAROUSEL */
+
+.featured-carousel {
+
+    width: 100%;
+
+    overflow: hidden;
+
+}
+
+.featured-carousel .carousel-item img {
+
+    width: 100%;
+
+    height: clamp(320px, 65vh, 720px);
+
+    object-fit: cover;
+
+}
+
+.featured-carousel .carousel-caption {
+
+    text-align: left;
+
+    left: 8%;
+
+    right: 8%;
+
+}
+
+.featured-carousel .carousel-caption h2 {
+
+    font-size: clamp(2rem, 6vw, 5rem);
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+}
+
+/* WHAT WE SELECT */
+
+.selection-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-areas:
+
+            "sound people"
+
+            "space culture";
+
+    }
+
+/* FROM THE JOURNAL */
+
+.journal-grid {
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        grid-template-areas:
+
+            "article-one article-two article-three";
+
+    }
+
+/* ABOUT */
+
+.what-we-do {
+
+        flex-direction: row;
+
+        gap: 50px;
+
+        padding: 60px 30px;
+
+    }
+
+.about-list {
+
+        width: auto;
+
+    }
+
+ /* FEATURED SESSIONS */
+
+.featured-sessions-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-areas: "mira nadia";
+
+    }
+
+/* THE ARCHIVE */
+
+.archive-grid {
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        grid-template-areas:
+
+            "entry001 entry002 entry003"
+
+            "entry004 entry005 entry006";
+
+    }
+
+}
+

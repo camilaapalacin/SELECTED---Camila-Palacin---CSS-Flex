@@ -1,0 +1,96 @@
+/* ABOUT — BOOTSTRAP CARDS */
+
+.about-cards {
+
+    width: 100%;
+
+    margin: 0;
+
+}
+
+.about-cards .card {
+
+    height: 100%;
+
+    color: #0A0A0A;
+
+    background-color: #F1F1EC;
+
+    border: 1px solid #0A0A0A;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    transition:
+
+        background-color 0.25s ease,
+
+        transform 0.25s ease;
+
+}
+
+.about-cards .card:hover {
+
+    background-color: #DDF497;
+
+    transform: translateY(-4px);
+
+}
+
+.about-cards .card-body {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 24px;
+
+}
+
+.about-cards .card-index {
+
+    margin-bottom: 32px;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.04em;
+
+}
+
+.about-cards .card-title {
+
+    margin-bottom: 12px;
+
+    font-family: "Archivo Black", sans-serif;
+
+    font-size: 1.2rem;
+
+    text-transform: uppercase;
+
+}
+
+.about-cards .card-text {
+
+    margin-bottom: 0;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 0.85rem;
+
+    line-height: 1.6;
+
+}
+
+.about-cards .card:focus-within {
+
+    outline: 2px solid #0A0A0A;
+
+    outline-offset: 3px;
+
+}
+

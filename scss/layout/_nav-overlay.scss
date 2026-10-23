@@ -1,0 +1,218 @@
+/* FULLSCREEN MENU — MOBILE */
+
+.selected-navbar .selected-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    width: 100%;
+
+    height: 100vh;
+
+    height: 100dvh;
+
+    overflow-y: auto;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 100px 8vw 40px;
+
+    background-color: #F1F1EC;
+
+}
+
+.selected-navbar .navbar-collapse.show {
+
+    display: flex;
+
+}
+
+.selected-navbar .selected-close {
+
+    position: absolute;
+
+    top: 24px;
+
+    right: 28px;
+
+    z-index: 2010;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #0A0A0A;
+
+    font-size: 3rem;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s ease;
+
+}
+
+.selected-navbar .selected-close:hover {
+
+    opacity: 0.6;
+
+}
+
+.selected-navbar .selected-menu-links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+.selected-navbar .selected-menu-links .nav-link {
+
+    display: inline-block;
+
+    padding: 4px 0;
+
+    color: #0A0A0A;
+
+    font-family: inherit;
+
+    font-size: clamp(2rem, 7vw, 5rem);
+
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    text-transform: lowercase;
+
+    white-space: nowrap;
+
+    transition:
+
+        color 0.2s ease,
+
+        background-color 0.2s ease,
+
+        transform 0.2s ease;
+
+}
+
+.selected-navbar .selected-menu-links .nav-link:hover,
+
+.selected-navbar .selected-menu-links .nav-link:focus-visible {
+
+    color: #0A0A0A;
+
+    background-color: #DDF497;
+
+    transform: translateX(8px);
+
+}
+
+.selected-navbar .selected-menu-links .nav-link:active {
+
+    color: #F1F1EC;
+
+    background-color: #0A0A0A;
+
+}
+
+/* NAVBAR — DESKTOP */
+
+@media (min-width: 1024px) {
+
+.selected-header {
+
+        flex-wrap: nowrap;
+
+    }
+
+    /* Ocultar hamburguesa */
+
+.selected-navbar .navbar-toggler {
+
+        display: none;
+
+    }
+
+    /* Mostrar navegación horizontal */
+
+.selected-navbar .navbar-collapse,
+
+.selected-navbar .navbar-collapse.collapse,
+
+.selected-navbar .navbar-collapse.show {
+
+        display: flex !important;
+
+        position: static;
+
+        inset: auto;
+
+        flex-basis: auto;
+
+        width: auto;
+
+        height: auto;
+
+        overflow: visible;
+
+        justify-content: flex-end;
+
+        padding: 0;
+
+        background: transparent;
+
+    }
+
+.selected-navbar .selected-menu-links {
+
+        flex-direction: row;
+
+        justify-content: flex-end;
+
+        align-items: center;
+
+        gap: 16px;
+
+        margin: 0;
+
+        padding: 0;
+
+    }
+
+.selected-navbar .selected-menu-links .nav-link {
+
+        padding: 6px 8px;
+
+        font-size: 0.8rem;
+
+        font-weight: 600;
+
+    }
+
+    /* Ocultar botón de cierre */
+
+.selected-navbar .selected-close {
+
+        display: none;
+
+    }
+
+}
+
