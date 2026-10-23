@@ -1,0 +1,13 @@
+// SELECTED — Sass entry point
+// Los parciales se importan en el mismo orden que el CSS original para preservar la cascada.
+@use "base/base";
+@use "layout/header";
+@use "components/sections";
+@use "components/responsive-layout";
+@use "layout/nav-base";
+@use "components/cards";
+@use "layout/nav-overlay";
+@use "components/responsive-images";
+@use "components/buttons";
+@use "layout/nav-responsive";
+@use "components/responsive";

@@ -1,0 +1,161 @@
+/* RESPONSIVE */
+
+/* MOBILE */
+
+@media (max-width: 767px) {
+    .about-section,
+    .what-we-do,
+    .what-is-selected {
+        flex-direction: column;
+        gap: 24px;
+        padding: 30px 20px;
+    }
+
+    .about-section > *,
+    .what-we-do > *,
+    .what-is-selected > * {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .about-section h1,
+    .about-section h2,
+    .what-we-do h1,
+    .what-we-do h2,
+    .what-is-selected h1,
+    .what-is-selected h2,
+    .about-section p,
+    .what-we-do p,
+    .what-is-selected p {
+        overflow-wrap: break-word;
+    }
+
+    .about-section img,
+    .what-we-do img,
+    .what-is-selected img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* TABLET */
+
+@media (min-width: 640px) {
+    .archive-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "entry001 entry002"
+            "entry003 entry004"
+            "entry005 entry006";
+    }
+
+    .journal-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "article-one article-two"
+            "article-three article-three";
+    }
+}
+
+/* TABLET */
+
+@media (min-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-section,
+    .what-is-selected {
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .about-section > *,
+    .what-is-selected > * {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .what-we-do {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    .what-we-do > * {
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+/* DESKTOP */
+
+@media (min-width: 1024px) {
+    header {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 30px;
+    }
+
+    header nav,
+    header nav.is-open {
+        display: block;
+        width: auto;
+    }
+
+    header nav ul {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    .the-art-of-selection {
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+        grid-template-areas: "text image";
+        align-items: center;
+        gap: 50px;
+        padding: 60px 30px;
+    }
+
+    .selection-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+            "sound people"
+            "space culture";
+    }
+
+    .journal-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-areas:
+            "article-one article-two article-three";
+    }
+
+    .about-section,
+    .what-we-do,
+    .what-is-selected {
+        padding: 60px 30px;
+    }
+
+    .about-section,
+    .what-is-selected,
+    .what-we-do {
+        gap: 50px;
+    }
+
+    .featured-sessions-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas: "mira nadia";
+    }
+
+    .archive-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-areas:
+            "entry001 entry002 entry003"
+            "entry004 entry005 entry006";
+    }
+}

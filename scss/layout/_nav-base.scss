@@ -1,0 +1,80 @@
+/* BOOTSTRAP NAVBAR — BASE */
+
+.selected-header {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-wrap: nowrap;
+
+    gap: 20px;
+
+    padding: 20px;
+
+}
+
+.selected-header > .logo-menu {
+
+    flex-shrink: 0;
+
+    position: relative;
+
+    z-index: 1030;
+
+    margin: 0;
+
+    font-size: 1.5rem;
+
+    line-height: 1;
+
+}
+
+.selected-navbar {
+
+    flex: 0 1 auto;
+
+    margin-left: auto;
+
+    padding: 0;
+
+}
+
+.selected-navbar .container-fluid {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    padding: 0;
+
+}
+
+.selected-navbar .navbar-toggler {
+
+    position: relative;
+
+    z-index: 1040;
+
+    margin-left: auto;
+
+    padding: 10px;
+
+    border: 1px solid #0A0A0A;
+
+    border-radius: 50%;
+
+}
+
+.selected-navbar .navbar-toggler:focus {
+
+    box-shadow: none;
+
+}
+

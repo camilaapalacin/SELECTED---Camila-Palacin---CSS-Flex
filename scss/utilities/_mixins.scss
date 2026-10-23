@@ -1,0 +1,12 @@
+// Mixins disponibles para la migración progresiva.
+@mixin tablet {
+  @media (min-width: 640px) { @content; }
+}
+
+@mixin desktop {
+  @media (min-width: 1024px) { @content; }
+}
+
+@mixin transicion($propiedad: all) {
+  transition: $propiedad 0.3s ease;
+}

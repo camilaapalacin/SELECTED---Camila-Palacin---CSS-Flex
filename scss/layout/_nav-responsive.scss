@@ -1,0 +1,75 @@
+/* FIX NAVBAR DESKTOP */
+@media (min-width: 992px) {
+    .selected-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .selected-navbar .navbar-collapse {
+        flex-grow: 0;
+        margin-left: auto;
+    }
+
+    .selected-navbar .selected-menu-links {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 2rem;
+        margin-left: auto;
+    }
+}
+
+.archive-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+        "entry001"
+        "entry002"
+        "entry003"
+        "entry004"
+        "entry005"
+        "entry006";
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.archive-001 {
+    grid-area: entry001;
+}
+
+.archive-002 {
+    grid-area: entry002;
+}
+
+.archive-003 {
+    grid-area: entry003;
+}
+
+.archive-004 {
+    grid-area: entry004;
+}
+
+.archive-005 {
+    grid-area: entry005;
+}
+
+.archive-006 {
+    grid-area: entry006;
+}
+
+.archive-grid article {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid #F1F1EC;
+}
+
+.archive-grid h4 {
+    margin-top: 16px;
+}
+
+.archive-ending {
+    background-color: #F1F1EC;
+    color: #0A0A0A;
+}
+
