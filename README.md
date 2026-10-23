@@ -42,3 +42,9 @@ SELECTED explores the relationship between sound, people, space and culture thro
 The website is published using GitHub Pages from the `main` branch and the root directory.
 
 © 2026 SELECTED.
+
+## Development Workflow
+
+The project uses Git for version control, with descriptive commits
+to track improvements and feature branches to organize development.
+Changes are merged into `main` after review.
