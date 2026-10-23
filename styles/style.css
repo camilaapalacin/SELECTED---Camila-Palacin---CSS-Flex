@@ -1,616 +1,1570 @@
 /* RESET */
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
 
 /* GENERAL */
 
 body {
+
     background-color: #F1F1EC;
+
     color: #0A0A0A;
+
     font-family: "IBM Plex Mono", monospace;
+
     font-weight: 400;
+
     font-style: normal;
+
 }
 
 section {
+
     position: relative;
+
     padding: 24px 30px;
+
 }
 
 figure figcaption {
+
     padding-top: 10px;
+
 }
 
 footer {
+
     padding: 30px;
+
     background-color: #0A0A0A;
+
     color: #F1F1EC;
+
 }
 
 footer ul {
+
     display: flex;
+
     flex-wrap: wrap;
+
     align-items: center;
+
     gap: 20px;
+
     margin-top: 20px;
+
     list-style: none;
+
 }
 
 footer a {
+
     color: #F1F1EC;
+
 }
 
 /* TYPOGRAPHY */
 
 h1 {
+
     font-family: "Archivo", sans-serif;
+
     font-size: clamp(2.8rem, 9vw, 6rem);
+
     line-height: 0.9;
+
 }
 
 h2 {
+
     font-family: "Archivo Black", sans-serif;
+
     font-size: clamp(2rem, 6vw, 4rem);
+
     line-height: 0.95;
+
 }
 
 h3 {
+
     font-family: "Archivo Black", sans-serif;
+
     font-size: clamp(1.4rem, 3vw, 2rem);
+
 }
 
 p {
+
     font-family: "IBM Plex Mono", monospace;
+
     font-size: 1rem;
+
     line-height: 1.4;
+
 }
 
 .logo-menu {
+
     font-size: 1.5rem;
+
+    margin-bottom: 0;
+
 }
 
 /* HEADER AND NAVIGATION */
 
 header {
+
     position: relative;
+
     display: flex;
+
+    flex-direction: row;
+
     align-items: center;
+
     justify-content: space-between;
-    flex-wrap: wrap;
+
+    flex-wrap: nowrap;
+
     gap: 20px;
+
     padding: 20px;
-}
 
-.menu-toggle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-    width: 44px;
-    height: 44px;
-    padding: 8px;
-    background: transparent;
-    border: 1px solid #0A0A0A;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #0A0A0A;
-}
-
-header nav {
-    display: none;
-    width: 100%;
-}
-
-header nav.is-open {
-    display: block;
 }
 
 header nav ul {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: flex-start;
+
     gap: 12px;
+
     list-style: none;
+
 }
 
 header nav a {
+
     display: block;
+
     padding: 6px 10px;
+
     border: 1px solid #0A0A0A;
+
     border-radius: 20px;
+
     color: #0A0A0A;
+
     text-decoration: none;
+
     font-size: 0.8rem;
+
 }
 
 header nav a:hover {
+
     background-color: #DDF497;
+
 }
 
 header nav a:active {
+
     background-color: #0A0A0A;
+
     color: #F1F1EC;
+
+}
+
+header .selected-navbar {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+header .selected-navbar .container-fluid {
+
+    padding: 0;
+
+}
+
+header .logo-menu {
+
+    flex-shrink: 0;
+
 }
 
 /* MARQUEE */
 
 .marquee {
+
     padding: 20px 30px;
+
     border-top: 1px solid #0A0A0A;
+
     border-bottom: 1px solid #0A0A0A;
+
 }
+
+ 
+/* MARQUEE ANIMATION */
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee p {
+    display: inline-block;
+    width: max-content;
+    margin: 0;
+    animation: marquee-scroll 20s linear infinite;
+    will-change: transform;
+}
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Accesibilidad: respetar la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .marquee p {
+        animation: none;
+    }
+}
+
 
 /* SHARED CONTENT UTILITIES */
 
 .text-content {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 20px;
+
 }
 
 /* HOME — HERO */
 
 .selected-hero {
+
     display: flex;
+
     align-items: center;
+
     padding: clamp(40px, 8vw, 100px) 20px;
+
     background-color: #DDF497;
+
     color: #0A0A0A;
+
 }
 
 .selected-hero .text-content {
+
     max-width: 800px;
+
 }
 
 /* HOME — THE ART OF SELECTION */
 
 .the-art-of-selection {
+
     display: grid;
+
     grid-template-columns: minmax(0, 1fr);
+
     grid-template-areas:
+
         "text"
+
         "image";
+
     gap: 30px;
+
     padding: 40px 20px;
+
     background-color: #0A0A0A;
+
     color: #F1F1EC;
+
 }
 
 .the-art-of-selection .text-content {
+
     grid-area: text;
+
     min-width: 0;
+
 }
 
-.the-art-of-selection figure {
-    grid-area: image;
+.the-art-of-selection {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 32px;
+
+}
+
+.the-art-of-selection .text-content {
+
     width: 100%;
-    min-width: 0;
+
+    max-width: 100%;
+
 }
 
-.the-art-of-selection figure img {
+.the-art-of-selection .featured-carousel {
+
+    width: 100%;
+
+    max-width: 100%;
+
+}
+
+.the-art-of-selection .featured-carousel .carousel-item img {
+
     display: block;
-    width: 100%;
-    height: auto;
-}
 
-.the-art-of-selection figcaption {
-    padding-top: 10px;
+    width: 100%;
+
+    height: clamp(280px, 50vw, 600px);
+
+    object-fit: cover;
+
 }
 
 /* HOME — LATEST SELECTIONS */
 
 .latest-selections {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 30px;
+
     background-color: #0A0A0A;
+
     color: #F1F1EC;
+
 }
 
 .cards-container {
+
     display: grid;
+
     grid-template-columns: minmax(0, 1fr);
+
     gap: 20px;
+
     width: 100%;
+
 }
 
 .cards-container article {
+
     width: 100%;
+
     min-width: 0;
+
     padding: 20px;
+
     border: 1px solid #F1F1EC;
+
 }
 
 .cards-container figure {
+
     margin-top: 20px;
+
 }
 
 .cards-container img {
+
     display: block;
+
     width: 100%;
+
     max-width: 100%;
+
     height: auto;
+
 }
 
 /* HOME — WHAT WE SELECT */
 
 .what-we-select {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 30px;
+
     padding: 60px 30px;
+
 }
 
 .selection-grid {
+
     display: grid;
+
     grid-template-columns: minmax(0, 1fr);
+
     grid-template-areas:
+
         "sound"
+
         "people"
+
         "space"
+
         "culture";
+
     gap: 20px;
+
 }
 
 .selection-grid article {
+
     min-width: 0;
+
     padding: 20px;
+
     border: 1px solid #0A0A0A;
+
 }
 
 .selection-sound {
+
     grid-area: sound;
+
 }
 
 .selection-people {
+
     grid-area: people;
+
 }
 
 .selection-space {
+
     grid-area: space;
+
 }
 
 .selection-culture {
+
     grid-area: culture;
+
 }
 
 /* HOME — NEXT SELECTION */
 
 .next-selection {
+
     display: flex;
+
     align-items: center;
+
     padding: 60px 30px;
+
     background-color: #DDF497;
+
     color: #0A0A0A;
+
 }
 
 .next-selection .text-content {
+
     max-width: 700px;
+
 }
 
 /* HOME — FROM THE JOURNAL */
 
 .from-the-journal {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 30px;
+
     padding: 60px 20px;
+
 }
 
 .journal-grid {
+
     display: grid;
+
     grid-template-columns: minmax(0, 1fr);
+
     grid-template-areas:
+
         "article-one"
+
         "article-two"
+
         "article-three";
+
     gap: 20px;
+
 }
 
 .journal-grid article {
+
     min-width: 0;
+
     padding: 20px;
+
     border: 1px solid #0A0A0A;
+
 }
 
 .journal-grid article:nth-child(1) {
+
     grid-area: article-one;
+
 }
 
 .journal-grid article:nth-child(2) {
+
     grid-area: article-two;
+
 }
 
 .journal-grid article:nth-child(3) {
+
     grid-area: article-three;
+
 }
 
 /* ABOUT PAGE */
 
 .about-section {
+
     display: flex;
+
     align-items: center;
+
     padding: 60px 30px;
+
 }
 
 .about-section .text-content {
+
     max-width: 850px;
+
 }
 
 .what-we-do {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: flex-start;
+
     gap: 30px;
+
     padding: 60px 30px;
+
     background-color: #0A0A0A;
+
     color: #F1F1EC;
+
 }
 
 .what-we-do .text-content {
+
     flex: 1;
+
 }
 
 .about-list {
+
     display: flex;
+
     flex: 1;
+
     flex-direction: column;
+
     gap: 20px;
+
     width: 100%;
+
     padding: 20px;
+
     list-style-position: inside;
+
 }
 
 .about-list li {
+
     padding: 20px;
+
     border: 1px solid #F1F1EC;
+
 }
 
 .what-is-selected {
+
     display: flex;
+
     align-items: center;
+
     padding: 60px 30px;
+
     background-color: #DDF497;
+
     color: #0A0A0A;
+
 }
 
 /* SESSIONS PAGE */
 
 .sessions-intro {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 20px;
+
 }
 
 .session-filter {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 16px;
+
 }
 
 .session-filter nav {
+
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 10px;
+
 }
 
 .session-filter nav a {
+
     padding: 6px 12px;
+
     border: 1px solid #0A0A0A;
+
     border-radius: 20px;
+
     color: #0A0A0A;
+
     text-decoration: none;
+
 }
 
 .featured-sessions-hero {
+
     background-color: #DDF497;
+
     color: #0A0A0A;
+
 }
 
 .featured-sessions-grid {
+
     display: grid;
+
     grid-template-columns: minmax(0, 1fr);
+
     grid-template-areas:
+
         "mira"
+
         "nadia";
+
     gap: 24px;
+
     margin-top: 24px;
+
 }
 
 .featured-mira {
+
     grid-area: mira;
+
 }
 
 .featured-nadia {
+
     grid-area: nadia;
+
 }
 
 .featured-sessions-grid article {
+
     min-width: 0;
+
     padding: 16px;
+
     border: 1px solid #0A0A0A;
+
 }
 
 .featured-sessions-grid figure {
+
     margin-bottom: 16px;
+
 }
 
 .featured-sessions-grid img {
+
     display: block;
+
     width: 100%;
+
     height: auto;
+
 }
 
 .the-archive {
+
     background-color: #0A0A0A;
+
     color: #F1F1EC;
+
 }
 
 .archive-grid {
+
     display: grid;
+
     grid-template-columns: minmax(0, 1fr);
+
     grid-template-areas:
+
         "entry001"
+
         "entry002"
+
         "entry003"
+
         "entry004"
+
         "entry005"
+
         "entry006";
+
     gap: 16px;
+
     margin-top: 30px;
+
 }
 
 .archive-001 {
+
     grid-area: entry001;
+
 }
 
 .archive-002 {
+
     grid-area: entry002;
+
 }
 
 .archive-003 {
+
     grid-area: entry003;
+
 }
 
 .archive-004 {
+
     grid-area: entry004;
+
 }
 
 .archive-005 {
+
     grid-area: entry005;
+
 }
 
 .archive-006 {
+
     grid-area: entry006;
+
 }
 
 .archive-grid article {
+
     min-width: 0;
+
     padding: 20px;
+
     border: 1px solid #F1F1EC;
+
 }
 
 .archive-grid h4 {
+
     margin-top: 16px;
+
 }
 
 .archive-ending {
+
     background-color: #F1F1EC;
+
     color: #0A0A0A;
+
 }
 
 /* TABLET */
 
 @media (min-width: 640px) {
-    .archive-grid {
+
+.archive-grid {
+
         grid-template-columns: repeat(2, minmax(0, 1fr));
+
         grid-template-areas:
+
             "entry001 entry002"
+
             "entry003 entry004"
+
             "entry005 entry006";
+
     }
 
-    .journal-grid {
+.journal-grid {
+
         grid-template-columns: repeat(2, minmax(0, 1fr));
+
         grid-template-areas:
+
             "article-one article-two"
+
             "article-three article-three";
+
     }
+
 }
 
 /* TABLET AND DESKTOP */
 
 @media (min-width: 768px) {
-    .cards-container {
+
+.cards-container {
+
         grid-template-columns: repeat(2, minmax(0, 1fr));
+
     }
+
+}
+
+/* DESKTOP — LAYOUT */
+
+@media (min-width: 1024px) {
+
+    /* HEADER */
+
+.selected-header {
+
+        flex-direction: row;
+
+        flex-wrap: nowrap;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        padding: 20px 30px;
+
+    }
+
+    /* THE ART OF SELECTION */
+
+.the-art-of-selection {
+
+        grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+
+        grid-template-areas: "text image";
+
+        align-items: center;
+
+        gap: 50px;
+
+        padding: 60px 30px;
+
+    }
+
+/* FEATURED CAROUSEL */
+
+.featured-carousel {
+
+    width: 100%;
+
+    overflow: hidden;
+
+}
+
+.featured-carousel .carousel-item img {
+
+    width: 100%;
+
+    height: clamp(320px, 65vh, 720px);
+
+    object-fit: cover;
+
+}
+
+.featured-carousel .carousel-caption {
+
+    text-align: left;
+
+    left: 8%;
+
+    right: 8%;
+
+}
+
+.featured-carousel .carousel-caption h2 {
+
+    font-size: clamp(2rem, 6vw, 5rem);
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+}
+
+/* WHAT WE SELECT */
+
+.selection-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-areas:
+
+            "sound people"
+
+            "space culture";
+
+    }
+
+/* FROM THE JOURNAL */
+
+.journal-grid {
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        grid-template-areas:
+
+            "article-one article-two article-three";
+
+    }
+
+/* ABOUT */
+
+.what-we-do {
+
+        flex-direction: row;
+
+        gap: 50px;
+
+        padding: 60px 30px;
+
+    }
+
+.about-list {
+
+        width: auto;
+
+    }
+
+ /* FEATURED SESSIONS */
+
+.featured-sessions-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-areas: "mira nadia";
+
+    }
+
+/* THE ARCHIVE */
+
+.archive-grid {
+
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+
+        grid-template-areas:
+
+            "entry001 entry002 entry003"
+
+            "entry004 entry005 entry006";
+
+    }
+
+}
+
+/* BOOTSTRAP NAVBAR — BASE */
+
+.selected-header {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-wrap: nowrap;
+
+    gap: 20px;
+
+    padding: 20px;
+
+}
+
+.selected-header > .logo-menu {
+
+    flex-shrink: 0;
+
+    position: relative;
+
+    z-index: 1030;
+
+    margin: 0;
+
+    font-size: 1.5rem;
+
+    line-height: 1;
+
+}
+
+.selected-navbar {
+
+    flex: 0 1 auto;
+
+    margin-left: auto;
+
+    padding: 0;
+
+}
+
+.selected-navbar .container-fluid {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    padding: 0;
+
+}
+
+.selected-navbar .navbar-toggler {
+
+    position: relative;
+
+    z-index: 1040;
+
+    margin-left: auto;
+
+    padding: 10px;
+
+    border: 1px solid #0A0A0A;
+
+    border-radius: 50%;
+
+}
+
+.selected-navbar .navbar-toggler:focus {
+
+    box-shadow: none;
+
+}
+
+/* ABOUT — BOOTSTRAP CARDS */
+
+.about-cards {
+
+    width: 100%;
+
+    margin: 0;
+
+}
+
+.about-cards .card {
+
+    height: 100%;
+
+    color: #0A0A0A;
+
+    background-color: #F1F1EC;
+
+    border: 1px solid #0A0A0A;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    transition:
+
+        background-color 0.25s ease,
+
+        transform 0.25s ease;
+
+}
+
+.about-cards .card:hover {
+
+    background-color: #DDF497;
+
+    transform: translateY(-4px);
+
+}
+
+.about-cards .card-body {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 24px;
+
+}
+
+.about-cards .card-index {
+
+    margin-bottom: 32px;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 0.04em;
+
+}
+
+.about-cards .card-title {
+
+    margin-bottom: 12px;
+
+    font-family: "Archivo Black", sans-serif;
+
+    font-size: 1.2rem;
+
+    text-transform: uppercase;
+
+}
+
+.about-cards .card-text {
+
+    margin-bottom: 0;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 0.85rem;
+
+    line-height: 1.6;
+
+}
+
+.about-cards .card:focus-within {
+
+    outline: 2px solid #0A0A0A;
+
+    outline-offset: 3px;
+
+}
+
+/* FULLSCREEN MENU — MOBILE */
+
+.selected-navbar .selected-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    width: 100%;
+
+    height: 100vh;
+
+    height: 100dvh;
+
+    overflow-y: auto;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 100px 8vw 40px;
+
+    background-color: #F1F1EC;
+
+}
+
+.selected-navbar .navbar-collapse.show {
+
+    display: flex;
+
+}
+
+.selected-navbar .selected-close {
+
+    position: absolute;
+
+    top: 24px;
+
+    right: 28px;
+
+    z-index: 2010;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #0A0A0A;
+
+    font-size: 3rem;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s ease;
+
+}
+
+.selected-navbar .selected-close:hover {
+
+    opacity: 0.6;
+
+}
+
+.selected-navbar .selected-menu-links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+.selected-navbar .selected-menu-links .nav-link {
+
+    display: inline-block;
+
+    padding: 4px 0;
+
+    color: #0A0A0A;
+
+    font-family: inherit;
+
+    font-size: clamp(2rem, 7vw, 5rem);
+
+    font-weight: 700;
+
+    line-height: 1.1;
+
+    text-transform: lowercase;
+
+    white-space: nowrap;
+
+    transition:
+
+        color 0.2s ease,
+
+        background-color 0.2s ease,
+
+        transform 0.2s ease;
+
+}
+
+.selected-navbar .selected-menu-links .nav-link:hover,
+
+.selected-navbar .selected-menu-links .nav-link:focus-visible {
+
+    color: #0A0A0A;
+
+    background-color: #DDF497;
+
+    transform: translateX(8px);
+
+}
+
+.selected-navbar .selected-menu-links .nav-link:active {
+
+    color: #F1F1EC;
+
+    background-color: #0A0A0A;
+
+}
+
+/* NAVBAR — DESKTOP */
+
+@media (min-width: 1024px) {
+
+.selected-header {
+
+        flex-wrap: nowrap;
+
+    }
+
+    /* Ocultar hamburguesa */
+
+.selected-navbar .navbar-toggler {
+
+        display: none;
+
+    }
+
+    /* Mostrar navegación horizontal */
+
+.selected-navbar .navbar-collapse,
+
+.selected-navbar .navbar-collapse.collapse,
+
+.selected-navbar .navbar-collapse.show {
+
+        display: flex !important;
+
+        position: static;
+
+        inset: auto;
+
+        flex-basis: auto;
+
+        width: auto;
+
+        height: auto;
+
+        overflow: visible;
+
+        justify-content: flex-end;
+
+        padding: 0;
+
+        background: transparent;
+
+    }
+
+.selected-navbar .selected-menu-links {
+
+        flex-direction: row;
+
+        justify-content: flex-end;
+
+        align-items: center;
+
+        gap: 16px;
+
+        margin: 0;
+
+        padding: 0;
+
+    }
+
+.selected-navbar .selected-menu-links .nav-link {
+
+        padding: 6px 8px;
+
+        font-size: 0.8rem;
+
+        font-weight: 600;
+
+    }
+
+    /* Ocultar botón de cierre */
+
+.selected-navbar .selected-close {
+
+        display: none;
+
+    }
+
+}
+
+/* ABOUT — RESPONSIVE IMAGE */
+
+.about-figure {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 0;
+
+    overflow: hidden;
+
+}
+
+.about-figure img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 220px;
+
+    max-height: 220px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+}
+
+.about-figure figcaption {
+
+    margin-top: 8px;
+
+    font-family: "IBM Plex Mono", monospace;
+
+    font-size: 0.75rem;
+
+    line-height: 1.4;
+
+}
+
+/* TABLET */
+
+@media (min-width: 768px) {
+
+.about-figure img {
+
+        height: 320px;
+
+        max-height: 320px;
+
+    }
+
 }
 
 /* DESKTOP */
 
 @media (min-width: 1024px) {
-    /* HEADER */
-    header {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
+
+.about-figure img {
+
+        height: 420px;
+
+        max-height: 420px;
+
+    }
+
+}
+
+/* INTERACTIVE STATES — PRE-ENTREGA */
+
+a, button, .card, .cards-container article, .selection-grid article {
+    transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+a:focus-visible, button:focus-visible {
+    outline: 2px solid #0A0A0A;
+    outline-offset: 4px;
+}
+
+header .selected-navbar .nav-link {
+    color: #0A0A0A;
+    text-decoration: none;
+    border-radius: 0;
+}
+
+header .selected-navbar .nav-link:hover,
+header .selected-navbar .nav-link:focus-visible {
+    color: #0A0A0A;
+    background-color: #DDF497;
+}
+
+header .selected-navbar .nav-link:active {
+    color: #F1F1EC;
+    background-color: #0A0A0A;
+}
+
+@media (max-width: 767.98px) {
+    .the-art-of-selection figure img,
+    .about-figure img {
+        height: 220px;
+        max-height: 220px;
+    }
+}
+
+/* FIX NAVBAR DESKTOP */
+@media (min-width: 992px) {
+    .selected-navbar {
+        display: flex;
         justify-content: space-between;
-        padding: 20px 30px;
+        align-items: center;
     }
 
-    .menu-toggle {
-        display: none;
+    .selected-navbar .navbar-collapse {
+        flex-grow: 0;
+        margin-left: auto;
     }
 
-    header nav,
-    header nav.is-open {
-        display: block;
-        width: auto;
-    }
-
-    header nav ul {
-        flex-direction: row;
+    .selected-navbar .selected-menu-links {
+        display: flex;
         align-items: center;
         justify-content: flex-end;
-        gap: 12px;
-    }
-
-    /* THE ART OF SELECTION */
-    .the-art-of-selection {
-        grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
-        grid-template-areas: "text image";
-        align-items: center;
-        gap: 50px;
-        padding: 60px 30px;
-    }
-
-    /* WHAT WE SELECT */
-    .selection-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-areas:
-            "sound people"
-            "space culture";
-    }
-
-    /* FROM THE JOURNAL */
-    .journal-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        grid-template-areas:
-            "article-one article-two article-three";
-    }
-
-    /* ABOUT */
-    .what-we-do {
-        flex-direction: row;
-        gap: 50px;
-        padding: 60px 30px;
-    }
-
-    .about-list {
-        width: auto;
-    }
-
-    /* FEATURED SESSIONS */
-    .featured-sessions-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-areas: "mira nadia";
-    }
-
-    /* THE ARCHIVE */
-    .archive-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        grid-template-areas:
-            "entry001 entry002 entry003"
-            "entry004 entry005 entry006";
+        gap: 2rem;
+        margin-left: auto;
     }
 }

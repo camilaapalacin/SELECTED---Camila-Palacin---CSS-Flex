@@ -6,6 +6,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/style.css">
 
     <title>SELECTED. - Events</title>
@@ -15,28 +16,73 @@
 
 <body>
 
-    <header>
+     
+<header class="selected-header">
 
-        <h1 class="logo-menu">SELECTED.</h1>
+    <h1 class="logo-menu">SELECTED.</h1>
 
-        <nav>
+    <nav class="navbar selected-navbar">
 
-            <ul>
-                <li><a href="../index.html">home</a></li>
-                <li><a href="about.html">about</a></li>
-                <li><a href="sessions.html">sessions</a></li>
-                <li><a href="events.html">events</a></li>
-                <li><a href="journal.html">journal</a></li>
-                <li><a href="contact.html">contact</a></li>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#selectedMenu"
+            aria-controls="selectedMenu"
+            aria-expanded="false"
+            aria-label="Abrir menú">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse selected-overlay" id="selectedMenu">
+
+            <button
+                class="selected-close"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#selectedMenu"
+                aria-label="Cerrar menú">
+                &times;
+            </button>
+
+            <ul class="navbar-nav selected-menu-links">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./about.html">about</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./sessions.html">sessions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./events.html">events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./journal.html">journal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./contact.html">contact</a>
+                </li>
             </ul>
 
-        </nav>
+        </div>
+    </nav>
 
-    </header>
+</header>
 
-    <div class="marquee">
-        <p>SOUND — PEOPLE — SPACE — CULTURE ✦ MUSIC IS TEMPORARY, THE ARCHIVE REMAINS ✦ SELECTED — THE ART OF SELECTION ✦</p>
-    </div>
+  <div class="marquee">
+    <p>
+        SELECTED — INDEPENDENT ELECTRONIC MUSIC CULTURE —
+        SELECTED — INDEPENDENT ELECTRONIC MUSIC CULTURE —
+        SELECTED — INDEPENDENT ELECTRONIC MUSIC CULTURE —
+        SELECTED — INDEPENDENT ELECTRONIC MUSIC CULTURE —
+        SELECTED — INDEPENDENT ELECTRONIC MUSIC CULTURE —
+        SELECTED — INDEPENDENT ELECTRONIC MUSIC CULTURE —
+        SELECTED — INDEPENDENT ELECTRONIC MUSIC CULTURE —
+        SELECTED — INDEPENDENT ELECTRONIC MUSIC CULTURE —
+    </p>
+</div>
 
     <main>
 
@@ -265,7 +311,7 @@
         <p>© 2026 SELECTED. All rights reserved.</p>
 
     </footer>
-
+<!-- JavaScript de Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
