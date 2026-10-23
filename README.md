@@ -48,3 +48,6 @@ The website is published using GitHub Pages from the `main` branch and the root 
 The project uses Git for version control, with descriptive commits
 to track improvements and feature branches to organize development.
 Changes are merged into `main` after review.
+The project uses Git branches to organize development.
+Responsive navigation and layout improvements are developed in
+feature branches and merged into main.
