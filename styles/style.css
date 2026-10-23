@@ -238,6 +238,8 @@ header .logo-menu {
     will-change: transform;
 }
 
+/* Animated marquee: continuous horizontal scrolling */
+
 @keyframes marquee-scroll {
     from {
         transform: translateX(0);
