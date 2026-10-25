@@ -1,3 +1,6 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
 /* INTERACTIVE STATES — PRE-ENTREGA */
 
 a, button, .card, .cards-container article, .selection-grid article {
@@ -34,3 +37,31 @@ header .selected-navbar .nav-link:active {
     }
 }
 
+
+
+/* ANIMACIÓN NATIVA — interacciones sutiles */
+
+.cards-container article,
+.selection-grid article,
+.journal-grid article,
+.archive-grid article {
+    @include transicion-interactiva((transform, background-color, border-color), $duracion-interaccion, $ease-interaccion);
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .cards-container article:hover,
+    .selection-grid article:hover,
+    .journal-grid article:hover,
+    .archive-grid article:hover {
+        transform: translateY($distancia-hover * -1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -10,3 +10,8 @@
 @mixin transicion($propiedad: all) {
   transition: $propiedad 0.3s ease;
 }
+
+// Mixin parametrizado para reutilizar transiciones en distintos componentes.
+@mixin transicion-interactiva($propiedades: transform, $duracion: 0.25s, $curva: ease) {
+  transition: $propiedades $duracion $curva;
+}

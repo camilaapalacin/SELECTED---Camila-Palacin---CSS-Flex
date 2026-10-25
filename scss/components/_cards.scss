@@ -1,3 +1,11 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+// Base compartida para superficies interactivas (@extend).
+%superficie-interactiva {
+  transition: background-color $duracion-interaccion $ease-interaccion, transform $duracion-interaccion $ease-interaccion;
+}
+
 /* ABOUT — BOOTSTRAP CARDS */
 
 .about-cards {
@@ -22,11 +30,8 @@
 
     box-shadow: none;
 
-    transition:
-
-        background-color 0.25s ease,
-
-        transform 0.25s ease;
+    @extend %superficie-interactiva;
+    @include transicion-interactiva((background-color, transform, border-color), $duracion-interaccion, $ease-interaccion);
 
 }
 
@@ -34,7 +39,7 @@
 
     background-color: #DDF497;
 
-    transform: translateY(-4px);
+    transform: translateY($distancia-hover * -1);
 
 }
 
