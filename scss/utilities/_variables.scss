@@ -13,3 +13,8 @@ $font-titulos: "Archivo Black", sans-serif;
 $espaciado-seccion: 24px 30px;
 $padding-footer: 30px;
 $transicion-suave: 0.3s ease;
+
+// Animaciones — pre-entrega
+$duracion-interaccion: 0.25s;
+$distancia-hover: 4px;
+$ease-interaccion: cubic-bezier(0.2, 0.7, 0.2, 1);
