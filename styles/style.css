@@ -68,9 +68,18 @@ p {
   line-height: 1.4;
 }
 
+
 .logo-menu {
-  font-size: 1.5rem;
-  margin-bottom: 0;
+    display: inline-block;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin: 0;
+    padding: 0;
+    color: #0A0A0A;
+    text-decoration: none;
 }
 
 /* HEADER AND NAVIGATION */
@@ -600,12 +609,19 @@ header .logo-menu {
 }
 
 .selected-header > .logo-menu {
-  flex-shrink: 0;
-  position: relative;
-  z-index: 1030;
-  margin: 0;
-  font-size: 1.5rem;
-  line-height: 1;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1030;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: #0A0A0A;
+    text-decoration: none;
 }
 
 .selected-navbar {
@@ -1473,4 +1489,21 @@ figcaption {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+
+/* LOGO SELECTED — CONSISTENT ACROSS ALL PAGES */
+
+.selected-header > a.logo-menu,
+.selected-header > a.logo-menu:link,
+.selected-header > a.logo-menu:visited {
+    font-family: "IBM Plex Mono", monospace !important;
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    font-style: normal !important;
+    letter-spacing: -0.06em !important;
+    text-decoration: none !important;
+    color: #0A0A0A !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
