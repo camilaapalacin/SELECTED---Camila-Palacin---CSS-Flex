@@ -1,107 +1,121 @@
 
 @use "../utilities/mixins" as *;
 
-/* ==========================================
-   RESPONSIVE — SELECTED
-   ========================================== */
 
-/* MOBILE */
+// ==========================================
+// RESPONSIVE — SELECTED
+// ==========================================
 
-@media (max-width: 767px) {
-    .about-section,
-    .what-we-do,
-    .what-is-selected {
-        flex-direction: column;
-        gap: 24px;
-        padding: 30px 20px;
-    }
 
-    .about-section > *,
-    .what-we-do > *,
-    .what-is-selected > * {
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-    }
+// ==========================================
+// MOBILE — ABOUT
+// ==========================================
 
-    .about-section h1,
-    .about-section h2,
-    .what-we-do h1,
-    .what-we-do h2,
-    .what-is-selected h1,
-    .what-is-selected h2,
-    .about-section p,
-    .what-we-do p,
-    .what-is-selected p {
-        overflow-wrap: break-word;
-    }
+@media (max-width: 767.98px) {
 
-    .about-section img,
-    .what-we-do img,
-    .what-is-selected img {
-        width: 100%;
-        height: auto;
-    }
+  .about-section,
+  .what-we-do,
+  .what-is-selected {
+    flex-direction: column;
+    gap: 24px;
+    padding: 30px 20px;
+  }
+
+  .about-section > *,
+  .what-we-do > *,
+  .what-is-selected > * {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .about-section h1,
+  .about-section h2,
+  .what-we-do h1,
+  .what-we-do h2,
+  .what-is-selected h1,
+  .what-is-selected h2,
+  .about-section p,
+  .what-we-do p,
+  .what-is-selected p {
+    overflow-wrap: break-word;
+  }
+
+  .about-section img,
+  .what-we-do img,
+  .what-is-selected img {
+    width: 100%;
+    height: auto;
+  }
 }
 
-/* TABLET */
+
+// ==========================================
+// TABLET — ABOUT
+// ==========================================
 
 @include tablet-layout {
-    .about-section,
-    .what-is-selected {
-        flex-direction: row;
-        align-items: center;
-        gap: 30px;
-    }
 
-    .about-section > *,
-    .what-is-selected > * {
-        flex: 1;
-        min-width: 0;
-    }
+  .about-section,
+  .what-is-selected {
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
 
-    .what-we-do {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 30px;
+    > * {
+      flex: 1;
+      min-width: 0;
     }
+  }
 
-    .what-we-do > * {
-        flex: 1;
-        min-width: 0;
+  .what-we-do {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+
+    > * {
+      flex: 1;
+      min-width: 0;
     }
+  }
 }
 
-/* DESKTOP */
+
+// ==========================================
+// DESKTOP — ABOUT
+// ==========================================
 
 @include desktop {
-    .about-section,
-    .what-is-selected {
-        padding: 60px 30px;
-        gap: 50px;
-    }
+
+  .about-section,
+  .what-is-selected {
+    padding: 60px 30px;
+    gap: 50px;
+  }
 }
 
-/* ==========================================
-   RESPONSIVE CIERRE — PÁGINAS INTERIORES
-   ========================================== */
 
-/* REGLAS GENERALES PARA EVITAR DESBORDES */
+// ==========================================
+// RESPONSIVE — PÁGINAS INTERIORES
+// ==========================================
+
+
+// GENERAL OVERFLOW PROTECTION
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    width: 100%;
-    min-width: 0;
+  width: 100%;
+  min-width: 0;
 }
 
 body {
-    overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 main,
@@ -110,19 +124,19 @@ article,
 figure,
 form,
 nav {
-    min-width: 0;
-    max-width: 100%;
+  min-width: 0;
+  max-width: 100%;
 }
 
 img,
 video,
 iframe,
 svg {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 main img {
-    height: auto;
+  height: auto;
 }
 
 h1,
@@ -133,32 +147,32 @@ p,
 a,
 label,
 figcaption {
-    overflow-wrap: anywhere;
+  overflow-wrap: anywhere;
 }
 
-/* MOBILE — FILTROS, FORMULARIOS Y PÁGINAS INTERIORES */
+
+// MOBILE — HERO SECTIONS
 
 .contact-hero,
 .events-hero,
 .journal-hero {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    padding: clamp(32px, 8vw, 60px) 20px;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: clamp(32px, 8vw, 60px) 20px;
 
-.contact-hero h1,
-.contact-hero h2,
-.events-hero h1,
-.events-hero h2,
-.journal-hero h1,
-.journal-hero h2 {
+  h1,
+  h2 {
     max-width: 100%;
     margin: 0;
     font-size: clamp(2.4rem, 12vw, 5rem);
     line-height: 0.92;
+  }
 }
+
+
+// MOBILE — SECTION SPACING
 
 .get-in-touch,
 .selected-letter,
@@ -171,10 +185,11 @@ figcaption {
 .journal-filter,
 .journal-articles,
 .curated-perspectives {
-    padding: 32px 20px;
+  padding: 32px 20px;
 }
 
-/* CONTACT */
+
+// CONTACT
 
 .get-in-touch > p,
 .selected-letter > p,
@@ -182,90 +197,88 @@ figcaption {
 .press-collaborations > p,
 .upcoming-events > p,
 .past-events > p {
-    max-width: 70ch;
+  max-width: 70ch;
 }
 
 .get-in-touch form,
 .selected-letter form {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-    width: 100%;
-    max-width: 680px;
-    margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  width: 100%;
+  max-width: 680px;
+  margin-top: 24px;
 }
 
 .get-in-touch label,
 .selected-letter label {
-    display: block;
-    margin-top: 8px;
+  display: block;
+  margin-top: 8px;
 }
 
 .get-in-touch input,
 .get-in-touch textarea,
 .selected-letter input {
-    display: block;
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-    padding: 12px;
-    font: inherit;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  padding: 12px;
+  font: inherit;
 }
 
 .get-in-touch textarea {
-    min-height: 140px;
-    resize: vertical;
+  min-height: 140px;
+  resize: vertical;
 }
 
 .get-in-touch button,
 .selected-letter button {
-    align-self: flex-start;
-    max-width: 100%;
-    margin-top: 8px;
-    white-space: normal;
+  align-self: flex-start;
+  max-width: 100%;
+  margin-top: 8px;
+  white-space: normal;
 }
 
 .follow-the-journey nav,
 .events-filter nav,
 .journal-filter nav {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px 16px;
-    width: 100%;
-    margin: 18px 0;
-}
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  width: 100%;
+  margin: 18px 0;
 
-.follow-the-journey nav a,
-.events-filter nav a,
-.journal-filter nav a {
+  a {
     max-width: 100%;
     overflow-wrap: anywhere;
+  }
 }
 
 .press-collaborations > a {
-    display: inline-block;
-    max-width: 100%;
-    overflow-wrap: anywhere;
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
-/* EVENTS */
+
+// EVENTS
 
 .events-filter {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
 }
 
 .events-list {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
-}
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
 
-.events-list article {
+  article {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -274,62 +287,71 @@ figcaption {
     max-width: 100%;
     padding: 20px;
     border: 1px solid currentColor;
+
+    h2 {
+      max-width: 100%;
+      font-size: clamp(1.35rem, 6vw, 2rem);
+      line-height: 1.05;
+    }
+
+    figure {
+      width: 100%;
+      margin: 8px 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    > a {
+      display: inline-block;
+      max-width: 100%;
+      margin-top: auto;
+    }
+  }
 }
 
-.events-list article h2 {
-    max-width: 100%;
-    font-size: clamp(1.35rem, 6vw, 2rem);
-    line-height: 1.05;
-}
-
-.events-list article figure {
-    width: 100%;
-    margin: 8px 0;
-}
-
-.events-list article img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-}
-
-.events-list article > a,
 .past-events > a {
-    display: inline-block;
-    max-width: 100%;
-    margin-top: auto;
+  display: inline-block;
+  max-width: 100%;
+  margin-top: auto;
 }
 
-/* JOURNAL */
 
-.journal-hero figure {
+// JOURNAL
+
+.journal-hero {
+
+  figure {
     width: 100%;
     margin: 12px 0 0;
-}
 
-.journal-hero figure img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
 }
 
 .journal-filter {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
 }
 
 .journal-articles {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 16px;
-}
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
 
-.journal-articles article {
+  article {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -337,137 +359,143 @@ figcaption {
     min-width: 0;
     padding: 20px;
     border: 1px solid currentColor;
-}
 
-.journal-articles article h2 {
-    max-width: 100%;
-    font-size: clamp(1.35rem, 6vw, 2rem);
-    line-height: 1.08;
-}
+    h2 {
+      max-width: 100%;
+      font-size: clamp(1.35rem, 6vw, 2rem);
+      line-height: 1.08;
+    }
 
-.journal-articles article > a {
-    align-self: flex-end;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 44px;
-    min-height: 44px;
-    font-size: 1.5rem;
+    > a {
+      align-self: flex-end;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 44px;
+      min-height: 44px;
+      font-size: 1.5rem;
+    }
+  }
 }
 
 .curated-perspectives h2 {
-    max-width: 22ch;
-    font-size: clamp(1.8rem, 8vw, 4rem);
-    line-height: 0.98;
+  max-width: 22ch;
+  font-size: clamp(1.8rem, 8vw, 4rem);
+  line-height: 0.98;
 }
 
-/* TABLET — PÁGINAS INTERIORES */
+
+// ==========================================
+// TABLET — INTERIOR PAGES
+// ==========================================
 
 @include tablet-layout {
-    .contact-hero,
-    .events-hero,
-    .journal-hero {
-        padding: 56px 30px;
-    }
 
-    .get-in-touch,
-    .selected-letter,
-    .follow-the-journey,
-    .press-collaborations,
-    .upcoming-events,
-    .events-filter,
-    .events-list,
-    .past-events,
-    .journal-filter,
-    .journal-articles,
-    .curated-perspectives {
-        padding: 44px 30px;
-    }
+  .contact-hero,
+  .events-hero,
+  .journal-hero {
+    padding: 56px 30px;
+  }
 
-    .events-filter,
-    .journal-filter {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        column-gap: 24px;
-    }
+  .get-in-touch,
+  .selected-letter,
+  .follow-the-journey,
+  .press-collaborations,
+  .upcoming-events,
+  .events-filter,
+  .events-list,
+  .past-events,
+  .journal-filter,
+  .journal-articles,
+  .curated-perspectives {
+    padding: 44px 30px;
+  }
 
-    .events-filter nav,
-    .journal-filter nav {
-        flex: 1 1 100%;
-        order: 2;
-    }
+  .events-filter,
+  .journal-filter {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 24px;
 
-    .events-list,
-    .journal-articles {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
+    nav {
+      flex: 1 1 100%;
+      order: 2;
     }
+  }
 
-    .events-list article,
-    .journal-articles article {
-        padding: 24px;
-    }
+  .events-list,
+  .journal-articles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
 
-    .journal-hero {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(220px, 0.8fr);
-        align-items: center;
-        column-gap: 32px;
+    article {
+      padding: 24px;
     }
+  }
 
-    .journal-hero figure {
-        grid-column: 2;
-        grid-row: 1 / span 3;
-    }
+  .journal-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.8fr);
+    align-items: center;
+    column-gap: 32px;
 
-    .get-in-touch form,
-    .selected-letter form {
-        max-width: 720px;
+    figure {
+      grid-column: 2;
+      grid-row: 1 / span 3;
     }
+  }
+
+  .get-in-touch form,
+  .selected-letter form {
+    max-width: 720px;
+  }
 }
 
-/* DESKTOP — PÁGINAS INTERIORES */
+
+// ==========================================
+// DESKTOP — INTERIOR PAGES
+// ==========================================
 
 @include desktop {
-    .contact-hero,
-    .events-hero,
-    .journal-hero {
-        padding: 72px 30px;
-    }
 
-    .get-in-touch,
-    .selected-letter,
-    .follow-the-journey,
-    .press-collaborations,
-    .upcoming-events,
-    .events-filter,
-    .events-list,
-    .past-events,
-    .journal-filter,
-    .journal-articles,
-    .curated-perspectives {
-        padding: 60px 30px;
-    }
+  .contact-hero,
+  .events-hero,
+  .journal-hero {
+    padding: 72px 30px;
+  }
 
-    .events-list,
-    .journal-articles {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 24px;
-    }
+  .get-in-touch,
+  .selected-letter,
+  .follow-the-journey,
+  .press-collaborations,
+  .upcoming-events,
+  .events-filter,
+  .events-list,
+  .past-events,
+  .journal-filter,
+  .journal-articles,
+  .curated-perspectives {
+    padding: 60px 30px;
+  }
 
-    .events-list article,
-    .journal-articles article {
-        padding: 28px;
-    }
+  .events-list,
+  .journal-articles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
 
-    .journal-hero {
-        grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-        column-gap: 60px;
+    article {
+      padding: 28px;
     }
+  }
 
-    .get-in-touch form,
-    .selected-letter form {
-        max-width: 760px;
-    }
+  .journal-hero {
+    grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+    column-gap: 60px;
+  }
+
+  .get-in-touch form,
+  .selected-letter form {
+    max-width: 760px;
+  }
 }

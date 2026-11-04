@@ -1,413 +1,431 @@
 
+// ==========================================
+// SELECTED — SECTIONS
+// ==========================================
+
 @use "../utilities/variables" as *;
 
-/* MARQUEE */
+
+// ==========================================
+// MARQUEE
+// ==========================================
 
 .marquee {
-    padding: 20px 30px;
-    border-top: 1px solid $color-negro;
-    border-bottom: 1px solid $color-negro;
-}
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 30px;
+  border-top: 1px solid $color-negro;
+  border-bottom: 1px solid $color-negro;
+  white-space: nowrap;
 
-/* MARQUEE ANIMATION */
-
-.marquee {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.marquee p {
+  p {
     display: inline-block;
     width: max-content;
     margin: 0;
     animation: marquee-scroll 20s linear infinite;
     will-change: transform;
+  }
 }
 
-/* Animated marquee: continuous horizontal scrolling */
+// MARQUEE ANIMATION
 
 @keyframes marquee-scroll {
-    from {
-        transform: translateX(0);
-    }
+  from {
+    transform: translateX(0);
+  }
 
-    to {
-        transform: translateX(-50%);
-    }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-/* Accesibilidad: respetar la preferencia de movimiento reducido */
+// REDUCED MOTION
 
 @media (prefers-reduced-motion: reduce) {
-    .marquee p {
-        animation: none;
-    }
+  .marquee p {
+    animation: none;
+  }
 }
 
-/* SHARED CONTENT UTILITIES */
+
+// ==========================================
+// SHARED CONTENT UTILITIES
+// ==========================================
 
 .text-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* HOME — HERO */
+
+// ==========================================
+// HOME — HERO
+// ==========================================
 
 .selected-hero {
-    display: flex;
-    align-items: center;
-    padding: clamp(40px, 8vw, 100px) 20px;
-    background-color: $color-acento;
-    color: $color-negro;
-}
+  display: flex;
+  align-items: center;
+  padding: clamp(40px, 8vw, 100px) 20px;
+  background-color: $color-acento;
+  color: $color-negro;
 
-.selected-hero .text-content {
+  .text-content {
     max-width: 800px;
+  }
 }
 
-/* HOME — THE ART OF SELECTION */
+
+// ==========================================
+// HOME — THE ART OF SELECTION
+// ==========================================
 
 .the-art-of-selection {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-        "text"
-        "image";
-    gap: 30px;
-    padding: 40px 20px;
-    background-color: $color-negro;
-    color: $color-claro;
-}
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "text"
+    "image";
+  gap: 32px;
+  padding: 40px 20px;
+  background-color: $color-negro;
+  color: $color-claro;
 
-.the-art-of-selection .text-content {
+  .text-content {
     grid-area: text;
+    width: 100%;
+    max-width: 100%;
     min-width: 0;
-}
+  }
 
-.the-art-of-selection {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 32px;
-}
-
-.the-art-of-selection .text-content {
+  .featured-carousel {
+    grid-area: image;
     width: 100%;
     max-width: 100%;
+    min-width: 0;
+
+    .carousel-item img {
+      display: block;
+      width: 100%;
+      height: clamp(280px, 50vw, 600px);
+      object-fit: cover;
+    }
+  }
 }
 
-.the-art-of-selection .featured-carousel {
-    width: 100%;
-    max-width: 100%;
-}
 
-.the-art-of-selection .featured-carousel .carousel-item img {
-    display: block;
-    width: 100%;
-    height: clamp(280px, 50vw, 600px);
-    object-fit: cover;
-}
-
-/* HOME — LATEST SELECTIONS */
+// ==========================================
+// HOME — LATEST SELECTIONS
+// ==========================================
 
 .latest-selections {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    background-color: $color-negro;
-    color: $color-claro;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: $color-negro;
+  color: $color-claro;
 }
 
 .cards-container {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-    width: 100%;
-}
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 20px;
+  width: 100%;
 
-.cards-container article {
+  article {
     width: 100%;
     min-width: 0;
     padding: 20px;
     border: 1px solid $color-claro;
-}
+  }
 
-.cards-container figure {
+  figure {
     margin-top: 20px;
-}
+  }
 
-.cards-container img {
+  img {
     display: block;
     width: 100%;
     max-width: 100%;
     height: auto;
+  }
 }
 
-/* HOME — WHAT WE SELECT */
+
+// ==========================================
+// HOME — WHAT WE SELECT
+// ==========================================
 
 .what-we-select {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding: 60px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 60px 30px;
 }
 
 .selection-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-        "sound"
-        "people"
-        "space"
-        "culture";
-    gap: 20px;
-}
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "sound"
+    "people"
+    "space"
+    "culture";
+  gap: 20px;
 
-.selection-grid article {
+  article {
     min-width: 0;
     padding: 20px;
     border: 1px solid $color-negro;
+  }
 }
 
 .selection-sound {
-    grid-area: sound;
+  grid-area: sound;
 }
 
 .selection-people {
-    grid-area: people;
+  grid-area: people;
 }
 
 .selection-space {
-    grid-area: space;
+  grid-area: space;
 }
 
 .selection-culture {
-    grid-area: culture;
+  grid-area: culture;
 }
 
-/* HOME — NEXT SELECTION */
+
+// ==========================================
+// HOME — NEXT SELECTION
+// ==========================================
 
 .next-selection {
-    display: flex;
-    align-items: center;
-    padding: 60px 30px;
-    background-color: $color-acento;
-    color: $color-negro;
-}
+  display: flex;
+  align-items: center;
+  padding: 60px 30px;
+  background-color: $color-acento;
+  color: $color-negro;
 
-.next-selection .text-content {
+  .text-content {
     max-width: 700px;
+  }
 }
 
-/* HOME — FROM THE JOURNAL */
+
+// ==========================================
+// HOME — FROM THE JOURNAL
+// ==========================================
 
 .from-the-journal {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 60px 20px;
 }
 
 .journal-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-        "article-one"
-        "article-two"
-        "article-three";
-    gap: 20px;
-}
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "article-one"
+    "article-two"
+    "article-three";
+  gap: 20px;
 
-.journal-grid article {
+  article {
     min-width: 0;
     padding: 20px;
     border: 1px solid $color-negro;
+
+    &:nth-child(1) {
+      grid-area: article-one;
+    }
+
+    &:nth-child(2) {
+      grid-area: article-two;
+    }
+
+    &:nth-child(3) {
+      grid-area: article-three;
+    }
+  }
 }
 
-.journal-grid article:nth-child(1) {
-    grid-area: article-one;
-}
 
-.journal-grid article:nth-child(2) {
-    grid-area: article-two;
-}
-
-.journal-grid article:nth-child(3) {
-    grid-area: article-three;
-}
-
-/* ABOUT PAGE */
+// ==========================================
+// ABOUT PAGE
+// ==========================================
 
 .about-section {
-    display: flex;
-    align-items: center;
-    padding: 60px 30px;
-}
+  display: flex;
+  align-items: center;
+  padding: 60px 30px;
 
-.about-section .text-content {
+  .text-content {
     max-width: 850px;
+  }
 }
 
 .what-we-do {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 30px;
-    padding: 60px 30px;
-    background-color: $color-negro;
-    color: $color-claro;
-}
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 60px 30px;
+  background-color: $color-negro;
+  color: $color-claro;
 
-.what-we-do .text-content {
+  .text-content {
     flex: 1;
+  }
 }
 
 .about-list {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    padding: 20px;
-    list-style-position: inside;
-}
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  list-style-position: inside;
 
-.about-list li {
+  li {
     padding: 20px;
     border: 1px solid $color-claro;
+  }
 }
 
-.what-is-selected {
-    display: flex;
-    align-items: center;
-    padding: 60px 30px;
-    background-color: $color-acento;
-    color: $color-negro;
-}
 
-/* SESSIONS PAGE */
+// ==========================================
+// SESSIONS PAGE
+// ==========================================
 
 .sessions-intro {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .session-filter {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 
-.session-filter nav {
+  nav {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-}
 
-.session-filter nav a {
-    padding: 6px 12px;
-    border: 1px solid $color-negro;
-    border-radius: 20px;
-    color: $color-negro;
-    text-decoration: none;
+    a {
+      padding: 6px 12px;
+      border: 1px solid $color-negro;
+      border-radius: 20px;
+      color: $color-negro;
+      text-decoration: none;
+    }
+  }
 }
 
 .featured-sessions-hero {
-    background-color: $color-acento;
-    color: $color-negro;
+  background-color: $color-acento;
+  color: $color-negro;
 }
 
 .featured-sessions-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-        "mira"
-        "nadia";
-    gap: 24px;
-    margin-top: 24px;
-}
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "mira"
+    "nadia";
+  gap: 24px;
+  margin-top: 24px;
 
-.featured-mira {
-    grid-area: mira;
-}
-
-.featured-nadia {
-    grid-area: nadia;
-}
-
-.featured-sessions-grid article {
+  article {
     min-width: 0;
     padding: 16px;
     border: 1px solid $color-negro;
-}
+  }
 
-.featured-sessions-grid figure {
+  figure {
     margin-bottom: 16px;
-}
+  }
 
-.featured-sessions-grid img {
+  img {
     display: block;
     width: 100%;
     height: auto;
+  }
 }
 
+.featured-mira {
+  grid-area: mira;
+}
+
+.featured-nadia {
+  grid-area: nadia;
+}
+
+
+// ==========================================
+// ARCHIVE
+// ==========================================
+
 .the-archive {
-    background-color: $color-negro;
-    color: $color-claro;
+  background-color: $color-negro;
+  color: $color-claro;
 }
 
 .archive-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas:
-        "entry001"
-        "entry002"
-        "entry003"
-        "entry004"
-        "entry005"
-        "entry006";
-    gap: 16px;
-    margin-top: 30px;
-}
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "entry001"
+    "entry002"
+    "entry003"
+    "entry004"
+    "entry005"
+    "entry006";
+  gap: 16px;
+  margin-top: 30px;
 
-.archive-001 {
-    grid-area: entry001;
-}
-
-.archive-002 {
-    grid-area: entry002;
-}
-
-.archive-003 {
-    grid-area: entry003;
-}
-
-.archive-004 {
-    grid-area: entry004;
-}
-
-.archive-005 {
-    grid-area: entry005;
-}
-
-.archive-006 {
-    grid-area: entry006;
-}
-
-.archive-grid article {
+  article {
     min-width: 0;
     padding: 20px;
     border: 1px solid $color-claro;
+  }
+
+  h4 {
+    margin-top: 16px;
+  }
 }
 
-.archive-grid h4 {
-    margin-top: 16px;
+.archive-001 {
+  grid-area: entry001;
+}
+
+.archive-002 {
+  grid-area: entry002;
+}
+
+.archive-003 {
+  grid-area: entry003;
+}
+
+.archive-004 {
+  grid-area: entry004;
+}
+
+.archive-005 {
+  grid-area: entry005;
+}
+
+.archive-006 {
+  grid-area: entry006;
 }
 
 .archive-ending {
-    background-color: $color-claro;
-    color: $color-negro;
+  background-color: $color-claro;
+  color: $color-negro;
 }

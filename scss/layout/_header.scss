@@ -1,64 +1,68 @@
+
+// ==========================================
+// SELECTED — HEADER
+// ==========================================
+
 @use "../utilities/variables" as *;
 
-/* HEADER — GENERAL */
+
+// HEADER — GENERAL
 
 header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding: 20px;
+
+  // SELECTED HEADER
+
+  &.selected-header {
     position: relative;
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: nowrap;
     gap: 20px;
     padding: 20px;
-}
 
-/* SELECTED HEADER */
+    // LOGO
 
-.selected-header {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: 20px;
-    padding: 20px;
-}
-
-/* LOGO */
-
-.selected-header > .logo-menu {
-    flex-shrink: 0;
-    position: relative;
-    z-index: 1030;
-    margin: 0;
-    font-size: 1.5rem;
-    line-height: 1;
-}
-
-header .logo-menu {
-    flex-shrink: 0;
-}
-
-/* NAVIGATION CONTAINER */
-
-header .selected-navbar {
-    flex: 1;
-    min-width: 0;
-}
-
-header .selected-navbar .container-fluid {
-    padding: 0;
-}
-
-/* HEADER — DESKTOP */
-
-@media (min-width: $breakpoint-desktop) {
-    header {
-        padding: 20px 30px;
+    > .logo-menu {
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1030;
+      margin: 0;
+      font-size: 1.5rem;
+      line-height: 1;
     }
 
-    .selected-header {
-        padding: 20px 30px;
+    // NAVIGATION CONTAINER
+
+    .selected-navbar {
+      flex: 1;
+      min-width: 0;
+
+      .container-fluid {
+        padding: 0;
+      }
     }
+  }
+
+  .logo-menu {
+    flex-shrink: 0;
+  }
+
+  // HEADER — DESKTOP
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 20px 30px;
+
+    &.selected-header {
+      padding: 20px 30px;
+    }
+  }
 }
