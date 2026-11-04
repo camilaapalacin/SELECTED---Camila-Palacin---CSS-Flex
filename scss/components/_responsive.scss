@@ -1,4 +1,9 @@
-/* RESPONSIVE */
+
+@use "../utilities/mixins" as *;
+
+/* ==========================================
+   RESPONSIVE — SELECTED
+   ========================================== */
 
 /* MOBILE */
 
@@ -41,30 +46,7 @@
 
 /* TABLET */
 
-@media (min-width: 640px) {
-    .archive-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-areas:
-            "entry001 entry002"
-            "entry003 entry004"
-            "entry005 entry006";
-    }
-
-    .journal-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-areas:
-            "article-one article-two"
-            "article-three article-three";
-    }
-}
-
-/* TABLET */
-
-@media (min-width: 768px) {
-    .cards-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
+@include tablet-layout {
     .about-section,
     .what-is-selected {
         flex-direction: row;
@@ -92,80 +74,20 @@
 
 /* DESKTOP */
 
-@media (min-width: 1024px) {
-    header {
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        justify-content: space-between;
-        padding: 20px 30px;
-    }
-
-    header nav,
-    header nav.is-open {
-        display: block;
-        width: auto;
-    }
-
-    header nav ul {
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 12px;
-    }
-
-    .the-art-of-selection {
-        grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
-        grid-template-areas: "text image";
-        align-items: center;
-        gap: 50px;
-        padding: 60px 30px;
-    }
-
-    .selection-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-areas:
-            "sound people"
-            "space culture";
-    }
-
-    .journal-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        grid-template-areas:
-            "article-one article-two article-three";
-    }
-
+@include desktop {
     .about-section,
-    .what-we-do,
     .what-is-selected {
         padding: 60px 30px;
-    }
-
-    .about-section,
-    .what-is-selected,
-    .what-we-do {
         gap: 50px;
-    }
-
-    .featured-sessions-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-areas: "mira nadia";
-    }
-
-    .archive-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        grid-template-areas:
-            "entry001 entry002 entry003"
-            "entry004 entry005 entry006";
     }
 }
 
-/* =========================================================
+/* ==========================================
    RESPONSIVE CIERRE — PÁGINAS INTERIORES
-   Mobile first: base < 768px, tablet >= 768px, desktop >= 1024px.
-   ========================================================= */
+   ========================================== */
 
 /* REGLAS GENERALES PARA EVITAR DESBORDES */
+
 *,
 *::before,
 *::after {
@@ -215,6 +137,7 @@ figcaption {
 }
 
 /* MOBILE — FILTROS, FORMULARIOS Y PÁGINAS INTERIORES */
+
 .contact-hero,
 .events-hero,
 .journal-hero {
@@ -252,6 +175,7 @@ figcaption {
 }
 
 /* CONTACT */
+
 .get-in-touch > p,
 .selected-letter > p,
 .follow-the-journey > p,
@@ -327,6 +251,7 @@ figcaption {
 }
 
 /* EVENTS */
+
 .events-filter {
     display: flex;
     flex-direction: column;
@@ -378,6 +303,7 @@ figcaption {
 }
 
 /* JOURNAL */
+
 .journal-hero figure {
     width: 100%;
     margin: 12px 0 0;
@@ -435,8 +361,9 @@ figcaption {
     line-height: 0.98;
 }
 
-/* TABLET */
-@media (min-width: 768px) {
+/* TABLET — PÁGINAS INTERIORES */
+
+@include tablet-layout {
     .contact-hero,
     .events-hero,
     .journal-hero {
@@ -500,8 +427,9 @@ figcaption {
     }
 }
 
-/* DESKTOP */
-@media (min-width: 1024px) {
+/* DESKTOP — PÁGINAS INTERIORES */
+
+@include desktop {
     .contact-hero,
     .events-hero,
     .journal-hero {
@@ -541,17 +469,5 @@ figcaption {
     .get-in-touch form,
     .selected-letter form {
         max-width: 760px;
-    }
-}
-
-/* ACCESSIBILITY: KEEP MOTION OPTIONAL */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
     }
 }

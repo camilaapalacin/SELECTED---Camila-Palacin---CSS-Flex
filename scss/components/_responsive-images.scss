@@ -70,3 +70,12 @@
 
 }
 
+
+/* THE ART OF SELECTION — MOBILE IMAGES */
+
+@media (max-width: 767.98px) {
+    .the-art-of-selection figure img {
+        height: 220px;
+        max-height: 220px;
+    }
+}

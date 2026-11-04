@@ -1,1 +1,21 @@
-// Los estilos originales del footer están preservados en base/_base.scss.
+@use "../utilities/variables" as *;
+
+/* FOOTER */
+footer {
+    padding: $padding-footer;
+    background-color: $color-negro;
+    color: $color-claro;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+        margin-top: 20px;
+        list-style: none;
+    }
+
+    a {
+        color: $color-claro;
+    }
+}
