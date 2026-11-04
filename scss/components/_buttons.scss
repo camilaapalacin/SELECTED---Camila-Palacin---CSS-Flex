@@ -1,64 +1,56 @@
 @use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
 
-/* INTERACTIVE STATES — PRE-ENTREGA */
+/* INTERACTIVE STATES */
 
-a, button, .card, .cards-container article, .selection-grid article {
-    transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+a,
+button,
+.card,
+.cards-container article,
+.selection-grid article {
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
 }
 
-a:focus-visible, button:focus-visible {
-    outline: 2px solid #0A0A0A;
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid $color-negro;
     outline-offset: 4px;
 }
 
-header .selected-navbar .nav-link {
-    color: #0A0A0A;
-    text-decoration: none;
-    border-radius: 0;
-}
-
-header .selected-navbar .nav-link:hover,
-header .selected-navbar .nav-link:focus-visible {
-    color: #0A0A0A;
-    background-color: #DDF497;
-}
-
-header .selected-navbar .nav-link:active {
-    color: #F1F1EC;
-    background-color: #0A0A0A;
-}
-
-@media (max-width: 767.98px) {
-    .the-art-of-selection figure img,
-    .about-figure img {
-        height: 220px;
-        max-height: 220px;
-    }
-}
-
-
-
-/* ANIMACIÓN NATIVA — interacciones sutiles */
+/* CARD ANIMATIONS */
 
 .cards-container article,
 .selection-grid article,
 .journal-grid article,
 .archive-grid article {
-    @include transicion-interactiva((transform, background-color, border-color), $duracion-interaccion, $ease-interaccion);
+    @include transicion-interactiva(
+        (transform, background-color, border-color),
+        $duracion-interaccion,
+        $ease-interaccion
+    );
 }
 
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-    .cards-container article:hover,
-    .selection-grid article:hover,
-    .journal-grid article:hover,
-    .archive-grid article:hover {
-        transform: translateY($distancia-hover * -1);
+    .cards-container article,
+    .selection-grid article,
+    .journal-grid article,
+    .archive-grid article {
+        &:hover {
+            transform: translateY($distancia-hover * -1);
+        }
     }
 }
 
+/* REDUCED MOTION */
+
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;

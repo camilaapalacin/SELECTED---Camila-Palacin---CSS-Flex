@@ -1,190 +1,92 @@
-/* TABLET */
+@use "../utilities/variables" as *;
 
-@media (min-width: 640px) {
+/* ==========================================
+   RESPONSIVE LAYOUT — SELECTED
+   ========================================== */
 
-.archive-grid {
+/* TABLET — 640px */
 
+@media (min-width: $breakpoint-tablet-small) {
+    .archive-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-
         grid-template-areas:
-
             "entry001 entry002"
-
             "entry003 entry004"
-
             "entry005 entry006";
-
     }
 
-.journal-grid {
-
+    .journal-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-
         grid-template-areas:
-
             "article-one article-two"
-
             "article-three article-three";
-
     }
-
 }
 
-/* TABLET AND DESKTOP */
+/* TABLET — 768px */
 
-@media (min-width: 768px) {
-
-.cards-container {
-
+@media (min-width: $breakpoint-tablet) {
+    .cards-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-
     }
-
 }
 
-/* DESKTOP — LAYOUT */
+/* DESKTOP — 1024px */
 
-@media (min-width: 1024px) {
-
-    /* HEADER */
-
-.selected-header {
-
-        flex-direction: row;
-
-        flex-wrap: nowrap;
-
-        align-items: center;
-
-        justify-content: space-between;
-
-        padding: 20px 30px;
-
-    }
+@media (min-width: $breakpoint-desktop) {
 
     /* THE ART OF SELECTION */
 
-.the-art-of-selection {
-
+    .the-art-of-selection {
         grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
-
         grid-template-areas: "text image";
-
         align-items: center;
-
-        gap: 50px;
-
+        gap: $gap-desktop;
         padding: 60px 30px;
-
     }
 
-/* FEATURED CAROUSEL */
+    /* WHAT WE SELECT */
 
-.featured-carousel {
-
-    width: 100%;
-
-    overflow: hidden;
-
-}
-
-.featured-carousel .carousel-item img {
-
-    width: 100%;
-
-    height: clamp(320px, 65vh, 720px);
-
-    object-fit: cover;
-
-}
-
-.featured-carousel .carousel-caption {
-
-    text-align: left;
-
-    left: 8%;
-
-    right: 8%;
-
-}
-
-.featured-carousel .carousel-caption h2 {
-
-    font-size: clamp(2rem, 6vw, 5rem);
-
-    font-weight: 700;
-
-    text-transform: uppercase;
-
-}
-
-/* WHAT WE SELECT */
-
-.selection-grid {
-
+    .selection-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-
         grid-template-areas:
-
             "sound people"
-
             "space culture";
-
     }
 
-/* FROM THE JOURNAL */
+    /* FROM THE JOURNAL */
 
-.journal-grid {
-
+    .journal-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-
         grid-template-areas:
-
             "article-one article-two article-three";
-
     }
 
-/* ABOUT */
+    /* ABOUT */
 
-.what-we-do {
-
+    .what-we-do {
         flex-direction: row;
-
-        gap: 50px;
-
+        gap: $gap-desktop;
         padding: 60px 30px;
-
     }
 
-.about-list {
-
+    .about-list {
         width: auto;
-
     }
 
- /* FEATURED SESSIONS */
+    /* FEATURED SESSIONS */
 
-.featured-sessions-grid {
-
+    .featured-sessions-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-
         grid-template-areas: "mira nadia";
-
     }
 
-/* THE ARCHIVE */
+    /* THE ARCHIVE */
 
-.archive-grid {
-
+    .archive-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-
         grid-template-areas:
-
             "entry001 entry002 entry003"
-
             "entry004 entry005 entry006";
-
     }
-
 }
-
