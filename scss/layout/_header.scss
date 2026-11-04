@@ -1,88 +1,64 @@
-/* HEADER AND NAVIGATION */
+@use "../utilities/variables" as *;
+
+/* HEADER — GENERAL */
 
 header {
-
     position: relative;
-
     display: flex;
-
     flex-direction: row;
-
     align-items: center;
-
     justify-content: space-between;
-
     flex-wrap: nowrap;
-
     gap: 20px;
-
     padding: 20px;
-
 }
 
-header nav ul {
+/* SELECTED HEADER */
 
+.selected-header {
+    position: relative;
     display: flex;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 12px;
-
-    list-style: none;
-
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 20px;
 }
 
-header nav a {
+/* LOGO */
 
-    display: block;
-
-    padding: 6px 10px;
-
-    border: 1px solid #0A0A0A;
-
-    border-radius: 20px;
-
-    color: #0A0A0A;
-
-    text-decoration: none;
-
-    font-size: 0.8rem;
-
-}
-
-header nav a:hover {
-
-    background-color: #DDF497;
-
-}
-
-header nav a:active {
-
-    background-color: #0A0A0A;
-
-    color: #F1F1EC;
-
-}
-
-header .selected-navbar {
-
-    flex: 1;
-
-    min-width: 0;
-
-}
-
-header .selected-navbar .container-fluid {
-
-    padding: 0;
-
+.selected-header > .logo-menu {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1030;
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1;
 }
 
 header .logo-menu {
-
     flex-shrink: 0;
-
 }
 
+/* NAVIGATION CONTAINER */
+
+header .selected-navbar {
+    flex: 1;
+    min-width: 0;
+}
+
+header .selected-navbar .container-fluid {
+    padding: 0;
+}
+
+/* HEADER — DESKTOP */
+
+@media (min-width: $breakpoint-desktop) {
+    header {
+        padding: 20px 30px;
+    }
+
+    .selected-header {
+        padding: 20px 30px;
+    }
+}

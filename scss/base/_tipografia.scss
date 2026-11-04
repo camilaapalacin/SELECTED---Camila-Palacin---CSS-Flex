@@ -1,1 +1,38 @@
-// La tipografía original está preservada en base/_base.scss para mantener el orden de cascada.
+@use "../utilities/variables" as *;
+
+/* TYPOGRAPHY */
+h1 {
+    font-family: $font-display;
+    font-size: clamp(2.8rem, 9vw, 6rem);
+    line-height: 0.9;
+}
+
+h2 {
+    font-family: $font-titulos;
+    font-size: clamp(2rem, 6vw, 4rem);
+    line-height: 0.95;
+}
+
+h3 {
+    font-family: $font-titulos;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+p {
+    font-family: $font-principal;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.logo-menu {
+    display: inline-block;
+    font-family: $font-titulos;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin: 0;
+    padding: 0;
+    color: $color-negro;
+    text-decoration: none;
+}

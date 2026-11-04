@@ -169,3 +169,39 @@
     }
   }
 }
+/* NAVIGATION — TABLET LANDSCAPE */
+
+@media (min-width: $breakpoint-nav) {
+  .selected-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .navbar-collapse {
+      flex-grow: 0;
+      margin-left: auto;
+    }
+
+    .selected-menu-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 2rem;
+      margin-left: auto;
+    }
+  }
+}
+
+/* NAVIGATION — LINK BORDER */
+
+.selected-navbar .selected-menu-links .nav-link {
+    border: 1px solid $color-negro;
+}
+
+/* NAVIGATION — GENERAL LINK STYLES */
+
+.selected-navbar .nav-link {
+    color: $color-texto;
+    text-decoration: none;
+    border-radius: 0;
+}
