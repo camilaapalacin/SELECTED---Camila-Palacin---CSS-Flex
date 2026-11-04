@@ -2,6 +2,7 @@
 /* ==========================================
    SELECTED — SASS ENTRY POINT
    ========================================== */
+/* UTILITIES */
 /* BASE */
 /* RESET */
 * {
@@ -201,7 +202,7 @@ header .selected-navbar .container-fluid {
   line-height: 1.1;
   text-transform: lowercase;
   white-space: nowrap;
-  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  transition: color, background-color, transform 0.2s ease;
 }
 .selected-navbar .selected-menu-links .nav-link:hover, .selected-navbar .selected-menu-links .nav-link:focus-visible {
   color: #0A0A0A;
@@ -211,6 +212,14 @@ header .selected-navbar .container-fluid {
 .selected-navbar .selected-menu-links .nav-link:active {
   color: #F1F1EC;
   background-color: #0A0A0A;
+}
+.selected-navbar .selected-menu-links .nav-link {
+  border: 1px solid #0A0A0A;
+}
+.selected-navbar .nav-link {
+  color: #0A0A0A;
+  text-decoration: none;
+  border-radius: 0;
 }
 
 /* NAVIGATION — DESKTOP */
@@ -239,13 +248,15 @@ header .selected-navbar .container-fluid {
     justify-content: flex-end;
     padding: 0;
     background: transparent;
+    flex-grow: 0;
+    margin-left: auto;
   }
   .selected-navbar .selected-menu-links {
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    gap: 16px;
-    margin: 0;
+    gap: 2rem;
+    margin: 0 0 0 auto;
     padding: 0;
   }
   .selected-navbar .selected-menu-links .nav-link {
@@ -255,14 +266,6 @@ header .selected-navbar .container-fluid {
   }
   .selected-navbar .selected-close {
     display: none;
-  }
-  .selected-navbar .navbar-collapse {
-    flex-grow: 0;
-    margin-left: auto;
-  }
-  .selected-navbar .selected-menu-links {
-    gap: 2rem;
-    margin-left: auto;
   }
 }
 /* NAVIGATION — TABLET LANDSCAPE */
@@ -284,18 +287,6 @@ header .selected-navbar .container-fluid {
     margin-left: auto;
   }
 }
-/* NAVIGATION — LINK BORDER */
-.selected-navbar .selected-menu-links .nav-link {
-  border: 1px solid #0A0A0A;
-}
-
-/* NAVIGATION — GENERAL LINK STYLES */
-.selected-navbar .nav-link {
-  color: #0A0A0A;
-  text-decoration: none;
-  border-radius: 0;
-}
-
 /* FOOTER */
 footer {
   padding: 30px;
@@ -312,6 +303,10 @@ footer ul {
 }
 footer a {
   color: #F1F1EC;
+  transition: opacity 0.2s ease;
+}
+footer a:hover {
+  opacity: 0.6;
 }
 
 /* COMPONENTS */
@@ -762,7 +757,6 @@ footer a {
   width: 100%;
   margin: 0;
 }
-
 .about-cards .card {
   height: 100%;
   color: #0A0A0A;
@@ -772,43 +766,37 @@ footer a {
   box-shadow: none;
   transition: background-color, transform, border-color 0.25s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
-
 .about-cards .card:hover {
   background-color: #DDF497;
   transform: translateY(-4px);
 }
-
+.about-cards .card:focus-within {
+  outline: 2px solid #0A0A0A;
+  outline-offset: 3px;
+}
 .about-cards .card-body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 24px;
 }
-
 .about-cards .card-index {
   margin-bottom: 32px;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.75rem;
   letter-spacing: 0.04em;
 }
-
 .about-cards .card-title {
   margin-bottom: 12px;
   font-family: "Archivo Black", sans-serif;
   font-size: 1.2rem;
   text-transform: uppercase;
 }
-
 .about-cards .card-text {
   margin-bottom: 0;
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.85rem;
   line-height: 1.6;
-}
-
-.about-cards .card:focus-within {
-  outline: 2px solid #0A0A0A;
-  outline-offset: 3px;
 }
 
 /* FEATURED CAROUSEL */
@@ -841,7 +829,6 @@ footer a {
   margin: 0;
   overflow: hidden;
 }
-
 .about-figure img {
   display: block;
   width: 100%;
@@ -850,7 +837,6 @@ footer a {
   object-fit: cover;
   object-position: center;
 }
-
 .about-figure figcaption {
   margin-top: 8px;
   font-family: "IBM Plex Mono", monospace;

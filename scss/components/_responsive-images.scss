@@ -1,75 +1,49 @@
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
 /* ABOUT — RESPONSIVE IMAGE */
 
 .about-figure {
-
     display: block;
-
     width: 100%;
-
     max-width: 100%;
-
     margin: 0;
-
     overflow: hidden;
 
-}
+    img {
+        display: block;
+        width: 100%;
+        height: 220px;
+        max-height: 220px;
+        object-fit: cover;
+        object-position: center;
+    }
 
-.about-figure img {
-
-    display: block;
-
-    width: 100%;
-
-    height: 220px;
-
-    max-height: 220px;
-
-    object-fit: cover;
-
-    object-position: center;
-
-}
-
-.about-figure figcaption {
-
-    margin-top: 8px;
-
-    font-family: "IBM Plex Mono", monospace;
-
-    font-size: 0.75rem;
-
-    line-height: 1.4;
-
+    figcaption {
+        margin-top: 8px;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
 }
 
 /* TABLET */
 
-@media (min-width: 768px) {
-
-.about-figure img {
-
+@include tablet-layout {
+    .about-figure img {
         height: 320px;
-
         max-height: 320px;
-
     }
-
 }
 
 /* DESKTOP */
 
-@media (min-width: 1024px) {
-
-.about-figure img {
-
+@include desktop {
+    .about-figure img {
         height: 420px;
-
         max-height: 420px;
-
     }
-
 }
-
 
 /* THE ART OF SELECTION — MOBILE IMAGES */
 

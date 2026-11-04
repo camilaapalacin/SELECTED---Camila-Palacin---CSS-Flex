@@ -1,4 +1,5 @@
 @use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 
 /* ==========================================
    RESPONSIVE LAYOUT — SELECTED
@@ -6,7 +7,7 @@
 
 /* TABLET — 640px */
 
-@media (min-width: $breakpoint-tablet-small) {
+@include tablet {
     .archive-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-areas:
@@ -25,7 +26,7 @@
 
 /* TABLET — 768px */
 
-@media (min-width: $breakpoint-tablet) {
+@include tablet-layout {
     .cards-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -33,7 +34,7 @@
 
 /* DESKTOP — 1024px */
 
-@media (min-width: $breakpoint-desktop) {
+@include desktop {
 
     /* THE ART OF SELECTION */
 

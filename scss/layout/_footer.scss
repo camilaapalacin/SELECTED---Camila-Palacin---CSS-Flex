@@ -1,6 +1,9 @@
+
 @use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 
 /* FOOTER */
+
 footer {
     padding: $padding-footer;
     background-color: $color-negro;
@@ -17,5 +20,10 @@ footer {
 
     a {
         color: $color-claro;
+        @include transicion(opacity, 0.2s ease);
+
+        &:hover {
+            opacity: 0.6;
+        }
     }
 }

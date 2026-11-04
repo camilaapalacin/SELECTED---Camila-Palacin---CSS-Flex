@@ -1,16 +1,19 @@
 @use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 
 /* FEATURED CAROUSEL */
 
-@media (min-width: $breakpoint-desktop) {
+@include desktop {
     .featured-carousel {
         width: 100%;
         overflow: hidden;
 
-        .carousel-item img {
-            width: 100%;
-            height: clamp(320px, 65vh, 720px);
-            object-fit: cover;
+        .carousel-item {
+            img {
+                width: 100%;
+                height: clamp(320px, 65vh, 720px);
+                object-fit: cover;
+            }
         }
 
         .carousel-caption {

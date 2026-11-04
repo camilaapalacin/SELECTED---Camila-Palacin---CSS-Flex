@@ -1,3 +1,4 @@
+@use "../utilities/variables" as *;
 /* BOOTSTRAP NAVBAR — BASE */
 
 .selected-header {
@@ -66,7 +67,7 @@
 
     padding: 10px;
 
-    border: 1px solid #0A0A0A;
+    border: 1px solid $color-negro;
 
     border-radius: 50%;
 
