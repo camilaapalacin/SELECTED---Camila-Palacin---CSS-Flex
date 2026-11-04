@@ -1,101 +1,71 @@
+
 @use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
 
 // Base compartida para superficies interactivas (@extend).
+
 %superficie-interactiva {
-  transition: background-color $duracion-interaccion $ease-interaccion, transform $duracion-interaccion $ease-interaccion;
+    transition: background-color $duracion-interaccion $ease-interaccion,
+        transform $duracion-interaccion $ease-interaccion;
 }
 
 /* ABOUT — BOOTSTRAP CARDS */
 
 .about-cards {
-
     width: 100%;
-
     margin: 0;
 
+    .card {
+        height: 100%;
+        color: $color-negro;
+        background-color: $color-claro;
+        border: 1px solid $color-negro;
+        border-radius: 0;
+        box-shadow: none;
+
+        @extend %superficie-interactiva;
+        @include transicion-interactiva(
+            (background-color, transform, border-color),
+            $duracion-interaccion,
+            $ease-interaccion
+        );
+
+        &:hover {
+            background-color: $color-acento;
+            transform: translateY($distancia-hover * -1);
+        }
+
+        &:focus-within {
+            outline: 2px solid $color-negro;
+            outline-offset: 3px;
+        }
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+    }
+
+    .card-index {
+        margin-bottom: 32px;
+        font-family: $font-principal;
+        font-size: 0.75rem;
+        letter-spacing: 0.04em;
+    }
+
+    .card-title {
+        margin-bottom: 12px;
+        font-family: $font-titulos;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+
+    .card-text {
+        margin-bottom: 0;
+        font-family: $font-principal;
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
 }
-
-.about-cards .card {
-
-    height: 100%;
-
-    color: #0A0A0A;
-
-    background-color: #F1F1EC;
-
-    border: 1px solid #0A0A0A;
-
-    border-radius: 0;
-
-    box-shadow: none;
-
-    @extend %superficie-interactiva;
-    @include transicion-interactiva((background-color, transform, border-color), $duracion-interaccion, $ease-interaccion);
-
-}
-
-.about-cards .card:hover {
-
-    background-color: #DDF497;
-
-    transform: translateY($distancia-hover * -1);
-
-}
-
-.about-cards .card-body {
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    padding: 24px;
-
-}
-
-.about-cards .card-index {
-
-    margin-bottom: 32px;
-
-    font-family: "IBM Plex Mono", monospace;
-
-    font-size: 0.75rem;
-
-    letter-spacing: 0.04em;
-
-}
-
-.about-cards .card-title {
-
-    margin-bottom: 12px;
-
-    font-family: "Archivo Black", sans-serif;
-
-    font-size: 1.2rem;
-
-    text-transform: uppercase;
-
-}
-
-.about-cards .card-text {
-
-    margin-bottom: 0;
-
-    font-family: "IBM Plex Mono", monospace;
-
-    font-size: 0.85rem;
-
-    line-height: 1.6;
-
-}
-
-.about-cards .card:focus-within {
-
-    outline: 2px solid #0A0A0A;
-
-    outline-offset: 3px;
-
-}
-

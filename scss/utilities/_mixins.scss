@@ -33,8 +33,8 @@
 }
 
 // TRANSICIONES GENERALES
-@mixin transicion($propiedad: all) {
-  transition: $propiedad $transicion-suave;
+@mixin transicion($propiedad: all, $duracion: $transicion-suave) {
+    transition: $propiedad $duracion;
 }
 
 // TRANSICIONES INTERACTIVAS PARAMETRIZADAS

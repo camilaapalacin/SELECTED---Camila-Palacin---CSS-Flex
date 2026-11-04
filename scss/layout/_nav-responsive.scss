@@ -1,5 +1,10 @@
+
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
 /* FIX NAVBAR DESKTOP */
-@media (min-width: 992px) {
+
+@include navigation-desktop {
     .selected-navbar {
         display: flex;
         justify-content: space-between;
@@ -61,7 +66,7 @@
 .archive-grid article {
     min-width: 0;
     padding: 20px;
-    border: 1px solid #F1F1EC;
+    border: 1px solid $color-claro;
 }
 
 .archive-grid h4 {
@@ -69,7 +74,7 @@
 }
 
 .archive-ending {
-    background-color: #F1F1EC;
-    color: #0A0A0A;
+    background-color: $color-claro;
+    color: $color-negro;
 }
 

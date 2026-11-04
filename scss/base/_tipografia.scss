@@ -1,6 +1,7 @@
 @use "../utilities/variables" as *;
 
 /* TYPOGRAPHY */
+
 h1 {
     font-family: $font-display;
     font-size: clamp(2.8rem, 9vw, 6rem);
