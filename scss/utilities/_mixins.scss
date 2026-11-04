@@ -1,3 +1,4 @@
+
 // ==========================================
 // SELECTED — REUSABLE MIXINS
 // ==========================================
@@ -34,7 +35,7 @@
 
 // TRANSICIONES GENERALES
 @mixin transicion($propiedad: all, $duracion: $transicion-suave) {
-    transition: $propiedad $duracion;
+  transition: $propiedad $duracion;
 }
 
 // TRANSICIONES INTERACTIVAS PARAMETRIZADAS

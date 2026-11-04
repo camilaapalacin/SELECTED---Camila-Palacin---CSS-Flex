@@ -30,26 +30,34 @@
 /* TABLET */
 
 @include tablet-layout {
-    .about-figure img {
-        height: 320px;
-        max-height: 320px;
+    .about-figure {
+        img {
+            height: 320px;
+            max-height: 320px;
+        }
     }
 }
 
 /* DESKTOP */
 
 @include desktop {
-    .about-figure img {
-        height: 420px;
-        max-height: 420px;
+    .about-figure {
+        img {
+            height: 420px;
+            max-height: 420px;
+        }
     }
 }
 
 /* THE ART OF SELECTION — MOBILE IMAGES */
 
 @media (max-width: 767.98px) {
-    .the-art-of-selection figure img {
-        height: 220px;
-        max-height: 220px;
+    .the-art-of-selection {
+        figure {
+            img {
+                height: 220px;
+                max-height: 220px;
+            }
+        }
     }
 }

@@ -1,22 +1,39 @@
 
+
 /* ==========================================
    SELECTED — SASS ENTRY POINT
    ========================================== */
 
-/* UTILITIES */
+
+/* ==========================================
+   1. UTILITIES
+   ========================================== */
+
 @use "utilities/variables";
 @use "utilities/mixins";
 
-/* BASE */
+
+/* ==========================================
+   2. BASE
+   ========================================== */
+
 @use "base/base";
 @use "base/tipografia";
 
-/* LAYOUT */
+
+/* ==========================================
+   3. LAYOUT
+   ========================================== */
+
 @use "layout/header";
 @use "layout/nav";
 @use "layout/footer";
 
-/* COMPONENTS */
+
+/* ==========================================
+   4. COMPONENTS
+   ========================================== */
+
 @use "components/sections";
 @use "components/responsive-layout";
 @use "components/cards";

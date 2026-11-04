@@ -1,81 +1,62 @@
+
 @use "../utilities/variables" as *;
-/* BOOTSTRAP NAVBAR — BASE */
+
+
+// ==========================================
+// BOOTSTRAP NAVBAR — BASE
+// ==========================================
 
 .selected-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding: 20px;
 
-    position: relative;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    flex-wrap: nowrap;
-
-    gap: 20px;
-
-    padding: 20px;
-
-}
-
-.selected-header > .logo-menu {
-
+  > .logo-menu {
     flex-shrink: 0;
-
     position: relative;
-
     z-index: 1030;
-
     margin: 0;
-
     font-size: 1.5rem;
-
     line-height: 1;
-
+  }
 }
+
+
+// NAVBAR CONTAINER
 
 .selected-navbar {
+  flex: 0 1 auto;
+  margin-left: auto;
+  padding: 0;
 
-    flex: 0 1 auto;
-
-    margin-left: auto;
-
-    padding: 0;
-
-}
-
-.selected-navbar .container-fluid {
-
+  .container-fluid {
     display: flex;
-
     justify-content: flex-end;
-
     align-items: center;
-
     padding: 0;
+  }
 
-}
+  // HAMBURGER BUTTON
 
-.selected-navbar .navbar-toggler {
-
+  .navbar-toggler {
     position: relative;
-
     z-index: 1040;
-
     margin-left: auto;
-
     padding: 10px;
-
     border: 1px solid $color-negro;
-
     border-radius: 50%;
 
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $color-negro;
+      outline-offset: 4px;
+    }
+  }
 }
-
-.selected-navbar .navbar-toggler:focus {
-
-    box-shadow: none;
-
-}
-

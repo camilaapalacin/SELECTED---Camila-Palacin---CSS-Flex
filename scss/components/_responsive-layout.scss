@@ -1,93 +1,119 @@
+
+// ==========================================
+// SELECTED — RESPONSIVE LAYOUT
+// ==========================================
+
 @use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
 
-/* ==========================================
-   RESPONSIVE LAYOUT — SELECTED
-   ========================================== */
 
-/* TABLET — 640px */
+// ==========================================
+// TABLET — 640px
+// ==========================================
 
 @include tablet {
-    .archive-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-areas:
-            "entry001 entry002"
-            "entry003 entry004"
-            "entry005 entry006";
-    }
 
-    .journal-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-areas:
-            "article-one article-two"
-            "article-three article-three";
-    }
+  // THE ARCHIVE
+
+  .archive-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "entry001 entry002"
+      "entry003 entry004"
+      "entry005 entry006";
+  }
+
+
+  // FROM THE JOURNAL
+
+  .journal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "article-one article-two"
+      "article-three article-three";
+  }
 }
 
-/* TABLET — 768px */
+
+// ==========================================
+// TABLET — 768px
+// ==========================================
 
 @include tablet-layout {
-    .cards-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+
+  // LATEST SELECTIONS
+
+  .cards-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-/* DESKTOP — 1024px */
+
+// ==========================================
+// DESKTOP — 1024px
+// ==========================================
 
 @include desktop {
 
-    /* THE ART OF SELECTION */
+  // THE ART OF SELECTION
 
-    .the-art-of-selection {
-        grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
-        grid-template-areas: "text image";
-        align-items: center;
-        gap: $gap-desktop;
-        padding: 60px 30px;
-    }
+.the-art-of-selection {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "text"
+    "image";
+  align-items: start;
+  gap: 40px;
+  padding: 60px 30px;
+}
 
-    /* WHAT WE SELECT */
 
-    .selection-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-areas:
-            "sound people"
-            "space culture";
-    }
+  // WHAT WE SELECT
 
-    /* FROM THE JOURNAL */
+  .selection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "sound people"
+      "space culture";
+  }
 
-    .journal-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        grid-template-areas:
-            "article-one article-two article-three";
-    }
 
-    /* ABOUT */
+  // FROM THE JOURNAL
 
-    .what-we-do {
-        flex-direction: row;
-        gap: $gap-desktop;
-        padding: 60px 30px;
-    }
+  .journal-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      "article-one article-two article-three";
+  }
 
-    .about-list {
-        width: auto;
-    }
 
-    /* FEATURED SESSIONS */
+  // ABOUT
 
-    .featured-sessions-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-areas: "mira nadia";
-    }
+  .what-we-do {
+    flex-direction: row;
+    gap: $gap-desktop;
+    padding: 60px 30px;
+  }
 
-    /* THE ARCHIVE */
+  .about-list {
+    width: auto;
+  }
 
-    .archive-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        grid-template-areas:
-            "entry001 entry002 entry003"
-            "entry004 entry005 entry006";
-    }
+
+  // FEATURED SESSIONS
+
+  .featured-sessions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: "mira nadia";
+  }
+
+
+  // THE ARCHIVE
+
+  .archive-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      "entry001 entry002 entry003"
+      "entry004 entry005 entry006";
+  }
 }
