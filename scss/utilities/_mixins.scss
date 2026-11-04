@@ -1,17 +1,47 @@
-// Mixins disponibles para la migración progresiva.
+// ==========================================
+// SELECTED — REUSABLE MIXINS
+// ==========================================
+
+@use "variables" as *;
+
+// RESPONSIVE — TABLET SMALL (640px)
 @mixin tablet {
-  @media (min-width: 640px) { @content; }
+  @media (min-width: $breakpoint-tablet-small) {
+    @content;
+  }
 }
 
+// RESPONSIVE — TABLET (768px)
+@mixin tablet-layout {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+// RESPONSIVE — NAVIGATION (992px)
+@mixin navigation-desktop {
+  @media (min-width: $breakpoint-nav) {
+    @content;
+  }
+}
+
+// RESPONSIVE — DESKTOP (1024px)
 @mixin desktop {
-  @media (min-width: 1024px) { @content; }
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
 }
 
+// TRANSICIONES GENERALES
 @mixin transicion($propiedad: all) {
-  transition: $propiedad 0.3s ease;
+  transition: $propiedad $transicion-suave;
 }
 
-// Mixin parametrizado para reutilizar transiciones en distintos componentes.
-@mixin transicion-interactiva($propiedades: transform, $duracion: 0.25s, $curva: ease) {
+// TRANSICIONES INTERACTIVAS PARAMETRIZADAS
+@mixin transicion-interactiva(
+  $propiedades: transform,
+  $duracion: $duracion-interaccion,
+  $curva: $ease-interaccion
+) {
   transition: $propiedades $duracion $curva;
 }

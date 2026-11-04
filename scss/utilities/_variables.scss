@@ -1,20 +1,33 @@
-// Paleta original de SELECTED
+// ==========================================
+// SELECTED — DESIGN TOKENS
+// ==========================================
+
+// PALETA DE COLORES
 $color-fondo: #F1F1EC;
 $color-texto: #0A0A0A;
 $color-negro: #0A0A0A;
 $color-claro: #F1F1EC;
 $color-acento: #DDF497;
 
-// Tipografías originales
+// TIPOGRAFÍAS
 $font-principal: "IBM Plex Mono", monospace;
+$font-display: "Archivo", sans-serif;
 $font-titulos: "Archivo Black", sans-serif;
 
-// Espaciados originales
+// ESPACIADOS
 $espaciado-seccion: 24px 30px;
 $padding-footer: 30px;
-$transicion-suave: 0.3s ease;
+$gap-seccion: 24px;
+$gap-desktop: 50px;
 
-// Animaciones — pre-entrega
+// BREAKPOINTS RESPONSIVE
+$breakpoint-tablet-small: 640px;
+$breakpoint-tablet: 768px;
+$breakpoint-nav: 992px;
+$breakpoint-desktop: 1024px;
+
+// TRANSICIONES
+$transicion-suave: 0.3s ease;
 $duracion-interaccion: 0.25s;
 $distancia-hover: 4px;
 $ease-interaccion: cubic-bezier(0.2, 0.7, 0.2, 1);
