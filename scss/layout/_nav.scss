@@ -131,83 +131,187 @@
 
 
 // ==========================================
-// NAVIGATION — DESKTOP (1024px)
+// SELECTED — GLOBAL HAMBURGER (ALL BREAKPOINTS)
 // ==========================================
+// The navigation remains a fullscreen overlay on desktop and mobile.
+// This override intentionally replaces Bootstrap's default desktop navbar.
 
-@include desktop {
-  .selected-header {
-    flex-wrap: nowrap;
+.selected-header {
+  position: relative;
+  z-index: 2050;
+  background: $color-negro;
+  color: $color-claro;
+
+  > .logo-menu {
+    color: $color-claro;
+    text-decoration: none;
+  }
+}
+
+.selected-navbar {
+  width: auto;
+  flex: 0 0 auto;
+
+  .navbar-toggler {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 44px;
+    padding: 8px;
+    border: 0 !important;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none !important;
+
+    &:focus-visible {
+      outline: 2px solid $color-claro;
+      outline-offset: 4px;
+    }
   }
 
-  .selected-navbar {
+  .selected-hamburger-lines {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 32px;
+    flex-direction: column;
+    gap: 6px;
 
-    .navbar-toggler {
-      display: none;
+    span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: #fff;
+      transition: transform .25s ease, opacity .2s ease;
     }
+  }
 
-    .navbar-collapse,
-    .navbar-collapse.collapse,
-    .navbar-collapse.show {
-      display: flex !important;
-      position: static;
-      inset: auto;
-      flex-basis: auto;
-      width: auto;
-      height: auto;
-      overflow: visible;
-      justify-content: flex-end;
+  .selected-overlay,
+  .navbar-collapse.selected-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 2100;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: clamp(96px, 12vh, 140px) clamp(24px, 8vw, 120px) 48px;
+    margin: 0;
+    background: #050505 !important;
+    color: #fff;
+  }
+
+  .navbar-collapse.collapse:not(.show) {
+    display: none !important;
+  }
+
+  .navbar-collapse.collapse.show {
+    display: flex !important;
+  }
+
+  .selected-menu-links {
+    display: flex;
+    flex-direction: column !important;
+    align-items: flex-start;
+    gap: clamp(4px, 1.2vh, 14px);
+    margin: 0;
+    padding: 0;
+
+    .nav-link {
       padding: 0;
-      background: transparent;
-      flex-grow: 0;
-      margin-left: auto;
-    }
+      border: 0;
+      color: #fff !important;
+      font-family: "Archivo Black", sans-serif;
+      font-size: clamp(2.8rem, 7.2vw, 7.2rem);
+      font-weight: 400;
+      line-height: .9;
+      letter-spacing: -.065em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: color .2s ease, transform .2s ease;
 
-    .selected-menu-links {
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 2rem;
-      margin: 0 0 0 auto;
-      padding: 0;
-
-      .nav-link {
-        padding: 6px 8px;
-        font-size: 0.8rem;
-        font-weight: 600;
+      &:hover,
+      &:focus-visible {
+        color: $color-acento !important;
+        background: transparent !important;
+        transform: translateX(10px);
       }
     }
+  }
 
-    .selected-close {
-      display: none;
-    }
+  .selected-close {
+    position: absolute;
+    top: 22px;
+    right: clamp(20px, 3vw, 48px);
+    z-index: 2110;
+    display: block !important;
+    border: 0;
+    padding: 4px 8px;
+    background: transparent;
+    color: #fff !important;
+    font: 300 3.5rem/1 "Archivo", sans-serif;
+    cursor: pointer;
+
+    &:hover { color: $color-acento !important; }
+    &:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .selected-navbar .selected-hamburger-lines span,
+  .selected-navbar .selected-menu-links .nav-link {
+    transition: none;
   }
 }
 
 
-// ==========================================
-// NAVIGATION — TABLET LANDSCAPE (992px)
-// ==========================================
-
-@include navigation-desktop {
-  .selected-navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .navbar-collapse {
-      flex-grow: 0;
-      margin-left: auto;
-    }
-
-    .selected-menu-links {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 2rem;
-      margin-left: auto;
-    }
-  }
+// FINAL MENU STATE — shared desktop/mobile fullscreen navigation
+.selected-header {
+  position: relative;
+  z-index: 2200;
+  background: #050505;
+  color: #fff;
+}
+.selected-header > .logo-menu { color: #fff; }
+.selected-navbar { width: auto; flex: 0 0 auto; }
+.selected-navbar .navbar-toggler {
+  display: flex !important; align-items: center; justify-content: center;
+  width: 52px; height: 44px; padding: 8px; margin-left: auto;
+  border: 0 !important; border-radius: 0; background: transparent;
+  box-shadow: none !important;
+}
+.selected-navbar .navbar-toggler:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.selected-navbar .selected-hamburger-lines { display: flex; width: 32px; flex-direction: column; gap: 6px; }
+.selected-navbar .selected-hamburger-lines span { display: block; width: 100%; height: 2px; background: #fff; }
+.selected-navbar .navbar-collapse.selected-overlay {
+  position: fixed !important; inset: 0 !important; z-index: 2300;
+  display: none !important; width: 100%; height: 100vh; height: 100dvh;
+  max-height: 100dvh; overflow-y: auto; flex-direction: column;
+  align-items: flex-start; justify-content: flex-start;
+  padding: clamp(96px, 12vh, 140px) clamp(24px, 8vw, 120px) 48px;
+  margin: 0; background: #050505 !important; color: #fff;
+}
+.selected-navbar .navbar-collapse.selected-overlay.show { display: flex !important; }
+.selected-navbar .navbar-collapse.selected-overlay:not(.show) { display: none !important; }
+.selected-navbar .selected-menu-links { display: flex; flex-direction: column !important; align-items: flex-start; gap: clamp(4px, 1.2vh, 14px); margin: 0; padding: 0; }
+.selected-navbar .selected-menu-links .nav-link {
+  padding: 0; border: 0; color: #fff !important; background: transparent;
+  font-family: "Archivo Black", sans-serif; font-size: clamp(2.8rem, 7.2vw, 7.2rem);
+  font-weight: 400; line-height: .9; letter-spacing: -.065em;
+  text-transform: uppercase; text-decoration: none;
+}
+.selected-navbar .selected-menu-links .nav-link:hover,
+.selected-navbar .selected-menu-links .nav-link:focus-visible { color: $color-acento !important; transform: translateX(10px); }
+.selected-navbar .selected-close {
+  position: absolute; top: 22px; right: clamp(20px, 3vw, 48px); z-index: 2310;
+  display: block !important; border: 0; padding: 4px 8px; background: transparent;
+  color: #fff !important; font: 300 3.5rem/1 "Archivo", sans-serif; cursor: pointer;
+}
+body.menu-is-open { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) {
+  .selected-navbar .selected-menu-links .nav-link { transition: none; }
 }

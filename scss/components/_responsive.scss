@@ -499,3 +499,6 @@ figcaption {
     max-width: 760px;
   }
 }
+
+// Prevent accidental horizontal scrolling across responsive breakpoints.
+html, body { max-width: 100%; overflow-x: clip; }

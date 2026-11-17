@@ -1,39 +1,10 @@
-
-
-/* ==========================================
-   SELECTED — SASS ENTRY POINT
-   ========================================== */
-
-
-/* ==========================================
-   1. UTILITIES
-   ========================================== */
-
 @use "utilities/variables";
 @use "utilities/mixins";
-
-
-/* ==========================================
-   2. BASE
-   ========================================== */
-
 @use "base/base";
 @use "base/tipografia";
-
-
-/* ==========================================
-   3. LAYOUT
-   ========================================== */
-
 @use "layout/header";
 @use "layout/nav";
 @use "layout/footer";
-
-
-/* ==========================================
-   4. COMPONENTS
-   ========================================== */
-
 @use "components/sections";
 @use "components/responsive-layout";
 @use "components/cards";
@@ -41,3 +12,9 @@
 @use "components/responsive-images";
 @use "components/buttons";
 @use "components/responsive";
+@use "components/about-redesign";
+@use "components/archive-contact";
+@use "components/home-redesign";
+@use "components/archive-events-footer";
+@use "components/contact-page";
+@use "components/sessions-journal";
