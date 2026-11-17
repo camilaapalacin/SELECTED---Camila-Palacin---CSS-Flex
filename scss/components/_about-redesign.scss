@@ -1,0 +1,188 @@
+@use "../utilities/variables" as *;
+
+// ABOUT — visual language: editorial / underground / high contrast
+.page-about {
+  background: $color-fondo;
+  color: $color-negro;
+  font-family: "Archivo", sans-serif;
+
+  .selected-header {
+    min-height: 76px;
+    padding: 18px clamp(20px, 3vw, 48px);
+    background: $color-negro;
+    color: $color-claro;
+    border-bottom: 1px solid rgba(241, 241, 236, .35);
+
+    .logo-menu { color: $color-claro; font-family: "Archivo Black", sans-serif; letter-spacing: -.06em; text-decoration: none; }
+    .navbar-toggler { border-color: $color-claro; }
+    .navbar-toggler-icon { filter: invert(1); }
+  }
+
+  .marquee { display: none; }
+}
+
+.about-page { overflow: hidden; }
+.about-section-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid currentColor;
+  font: 500 11px/1.2 "IBM Plex Mono", monospace;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.about-hero {
+  position: relative;
+  min-height: min(760px, calc(100svh - 76px));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 70px clamp(20px, 3vw, 48px) 54px;
+  background: #050505;
+  color: $color-claro;
+
+  &::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(0,0,0,.75), rgba(0,0,0,.12) 70%), linear-gradient(0deg, rgba(0,0,0,.5), transparent 55%); }
+  &__meta { position: absolute; top: 22px; left: clamp(20px, 3vw, 48px); right: clamp(20px, 3vw, 48px); z-index: 2; display: flex; justify-content: space-between; gap: 20px; font: 11px "IBM Plex Mono", monospace; text-transform: uppercase; }
+  &__image { position: absolute; inset: 0 0 0 27%; z-index: -2; margin: 0; background: url("../assets/about/mira%20k.jpg") center 38% / cover no-repeat; filter: grayscale(1) contrast(1.08); opacity: .82; }
+  h1 { position: relative; z-index: 1; margin: 5vh 0 0 -.035em; font: clamp(6rem, 19vw, 19rem)/.76 "Archivo Black", sans-serif; letter-spacing: -.095em; text-transform: uppercase; }
+  h1 span { display: inline-block; margin-left: .2em; font: 500 clamp(1rem, 2vw, 2rem) "IBM Plex Mono", monospace; vertical-align: top; letter-spacing: 0; }
+  &__caption { position: absolute; bottom: 48px; left: clamp(20px, 3vw, 48px); margin: 0; color: $color-acento; font: clamp(1.5rem, 3vw, 3rem)/.92 "Archivo Black", sans-serif; letter-spacing: -.055em; }
+  &__index { position: absolute; right: clamp(20px, 3vw, 48px); bottom: 54px; font: 11px "IBM Plex Mono", monospace; }
+}
+
+.about-manifesto {
+  padding: 28px clamp(20px, 3vw, 48px) 54px;
+  background: $color-fondo;
+  &__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); gap: clamp(30px, 7vw, 110px); align-items: start; padding: 46px 0 38px; }
+  h2 { position: relative; margin: 0; font: clamp(3.8rem, 8vw, 8.5rem)/.79 "Archivo Black", sans-serif; letter-spacing: -.085em; }
+  h2 span { margin-left: 12px; color: #9bbd35; font: 500 .3em "IBM Plex Mono", monospace; vertical-align: top; }
+  &__copy { max-width: 510px; padding-top: 6px; }
+  &__copy p { max-width: 48ch; margin: 0 0 18px; font: 14px/1.55 "IBM Plex Mono", monospace; }
+  &__copy .about-lead { margin-bottom: 24px; font: 700 clamp(1.6rem, 2.5vw, 2.5rem)/1.02 "Archivo", sans-serif; letter-spacing: -.045em; }
+  &__image { position: relative; height: clamp(220px, 31vw, 440px); margin: 0; overflow: hidden; background: #222; }
+  &__image img { width: 100%; height: 100%; object-fit: cover; object-position: center 52%; filter: grayscale(1) contrast(1.08); transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+  &__image:hover img { transform: scale(1.025); }
+  &__image figcaption { position: absolute; right: 14px; bottom: 12px; color: white; font: 10px "IBM Plex Mono", monospace; text-shadow: 0 1px 8px #000; }
+}
+
+.about-perspective {
+  padding: 28px clamp(20px, 3vw, 48px) 24px;
+  background: $color-acento;
+  &__grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 40px; padding: 50px 0 45px; }
+  h2 { margin: 0; font: clamp(3.8rem, 8vw, 8rem)/.78 "Archivo Black", sans-serif; letter-spacing: -.08em; }
+  h2 span { display: inline-block; margin-left: 16px; font: .35em "IBM Plex Mono", monospace; vertical-align: top; }
+  p { max-width: 520px; margin: 0; font: 700 clamp(1.4rem, 2.4vw, 2.4rem)/1.08 "Archivo", sans-serif; letter-spacing: -.045em; }
+  &__note { padding-top: 13px; border-top: 1px solid rgba(10,10,10,.5); font: 10px "IBM Plex Mono", monospace; letter-spacing: .04em; }
+}
+
+.about-what-we-do {
+  padding: 28px clamp(20px, 3vw, 48px) 70px;
+  background: $color-fondo;
+  &__heading { display: flex; justify-content: space-between; align-items: end; gap: 30px; padding: 46px 0 34px; }
+  &__heading h2 { margin: 0; font: clamp(4rem, 9vw, 9rem)/.76 "Archivo Black", sans-serif; letter-spacing: -.09em; }
+  &__heading p { max-width: 300px; margin: 0 4vw 6px 0; font: 14px/1.5 "IBM Plex Mono", monospace; }
+}
+.about-areas { border-top: 1px solid $color-negro; }
+.about-area {
+  display: grid;
+  grid-template-columns: 70px minmax(180px, .8fr) minmax(200px, 1fr) 42px;
+  align-items: center;
+  gap: 20px;
+  min-height: 106px;
+  padding: 15px 8px;
+  border-bottom: 1px solid rgba(10,10,10,.45);
+  transition: background .25s ease, padding .25s ease;
+  &__number { font: 11px "IBM Plex Mono", monospace; }
+  h3 { margin: 0; font: clamp(2rem, 4vw, 4.4rem)/.9 "Archivo Black", sans-serif; letter-spacing: -.06em; }
+  p { margin: 0; font: 13px "IBM Plex Mono", monospace; }
+  &__arrow { justify-self: end; font: 2rem/1 "Archivo", sans-serif; transition: transform .25s ease; }
+  &:hover { padding-right: 20px; background: $color-acento; }
+  &:hover .about-area__arrow { transform: translate(4px, -4px); }
+}
+
+.about-visual-statement {
+  position: relative;
+  height: clamp(280px, 48vw, 620px);
+  overflow: hidden;
+  background: #111;
+  img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.1); }
+  &__overlay { position: absolute; inset: auto 0 0; display: flex; justify-content: space-between; gap: 20px; padding: 22px clamp(20px, 3vw, 48px); background: linear-gradient(transparent, rgba(0,0,0,.75)); color: white; font: 11px "IBM Plex Mono", monospace; }
+}
+
+.about-values {
+  padding: 28px clamp(20px, 3vw, 48px) 76px;
+  background: $color-fondo;
+  > h2 { margin: 50px 0 44px; font: clamp(4rem, 9vw, 9rem)/.76 "Archivo Black", sans-serif; letter-spacing: -.09em; }
+  > h2 span { margin-left: 12px; color: #9bbd35; font: .3em "IBM Plex Mono", monospace; vertical-align: top; }
+  &__grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid $color-negro; border-bottom: 1px solid $color-negro; }
+  &__grid article { min-height: 235px; padding: 18px 20px 24px 0; border-right: 1px solid rgba(10,10,10,.4); }
+  &__grid article + article { padding-left: 20px; }
+  &__grid article:last-child { border-right: 0; }
+  &__grid span { font: 10px "IBM Plex Mono", monospace; }
+  &__grid h3 { margin: 35px 0 18px; font: clamp(1.6rem, 2.5vw, 2.7rem)/.92 "Archivo Black", sans-serif; letter-spacing: -.06em; }
+  &__grid p { max-width: 25ch; margin: 0; font: 12px/1.5 "IBM Plex Mono", monospace; }
+}
+
+.about-closing {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  padding: 42px clamp(20px, 3vw, 48px);
+  background: $color-negro;
+  color: $color-claro;
+  p { margin: 0; color: $color-acento; font: clamp(1.7rem, 4vw, 4rem)/.92 "Archivo Black", sans-serif; letter-spacing: -.06em; }
+  span { font: 10px "IBM Plex Mono", monospace; }
+}
+.about-footer {
+  padding: 30px clamp(20px, 3vw, 48px) 20px;
+  background: $color-acento;
+  color: $color-negro;
+  &__top { display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; gap: 20px; padding: 12px 0 48px; }
+  h2 { margin: 0; font: clamp(3rem, 7vw, 7rem)/.8 "Archivo Black", sans-serif; letter-spacing: -.09em; }
+  h2 span { font: .25em "IBM Plex Mono", monospace; vertical-align: top; }
+  p, a { margin: 0; font: 11px/1.5 "IBM Plex Mono", monospace; color: inherit; text-decoration: none; }
+  &__top > a { justify-self: end; border-bottom: 1px solid $color-negro; padding-bottom: 5px; }
+  &__bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; padding-top: 14px; border-top: 1px solid rgba(10,10,10,.5); font: 9px "IBM Plex Mono", monospace; }
+  &__bottom div { display: flex; gap: 20px; }
+  &__bottom a { font-size: inherit; }
+}
+
+@media (max-width: 760px) {
+  .about-hero { min-height: 620px; min-height: 76svh; padding-top: 80px; }
+  .about-hero__image { inset: 0 0 0 5%; background-position: 55% center; opacity: .72; }
+  .about-hero__meta { font-size: 9px; }
+  .about-hero h1 { font-size: clamp(5rem, 22vw, 10rem); writing-mode: vertical-rl; transform: rotate(180deg); margin-left: -.08em; }
+  .about-hero__caption { bottom: 30px; }
+  .about-manifesto__grid, .about-perspective__grid { grid-template-columns: 1fr; gap: 28px; }
+  .about-manifesto h2, .about-perspective h2 { font-size: clamp(4rem, 16vw, 7rem); }
+  .about-what-we-do__heading { align-items: start; flex-direction: column; }
+  .about-area { grid-template-columns: 35px 1fr 30px; gap: 10px; min-height: 92px; }
+  .about-area p { grid-column: 2 / 3; grid-row: 2; font-size: 11px; }
+  .about-area__arrow { grid-column: 3; grid-row: 1 / 3; }
+  .about-values__grid { grid-template-columns: repeat(2, 1fr); }
+  .about-values__grid article { min-height: 210px; padding: 16px 12px 20px 0; }
+  .about-values__grid article + article { padding-left: 12px; }
+  .about-values__grid article:nth-child(2) { border-right: 0; }
+  .about-values__grid article:nth-child(-n+2) { border-bottom: 1px solid rgba(10,10,10,.4); }
+  .about-closing { align-items: start; flex-direction: column; }
+  .about-footer__top { grid-template-columns: 1fr 1fr; }
+  .about-footer__top > a { grid-column: 1 / -1; justify-self: start; }
+}
+
+@media (max-width: 420px) {
+  .about-section-label { font-size: 9px; }
+  .about-manifesto, .about-perspective, .about-what-we-do, .about-values { padding-left: 16px; padding-right: 16px; }
+  .about-hero { padding-left: 16px; padding-right: 16px; }
+  .about-hero__meta { left: 16px; right: 16px; }
+  .about-hero__index { right: 16px; }
+  .about-values__grid h3 { font-size: 1.5rem; }
+  .about-footer__bottom { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-manifesto__image img, .about-area, .about-area__arrow { transition: none; }
+}

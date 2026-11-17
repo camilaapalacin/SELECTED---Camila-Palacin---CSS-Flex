@@ -5,74 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>About Selected | Independent Electronic Music Archive</title>
-    <meta name="description" content="Discover Selected, an independent platform dedicated to electronic music culture, curated sessions, artists and musical exploration.">
+    <title>About SELECTED — Independent Electronic Music Culture</title>
+    <meta name="description" content="Discover the SELECTED manifesto, curatorial perspective and the people, sounds, spaces and ideas shaping electronic culture.">
 
+    <meta name="keywords" content="about selected, electronic music culture, music curation, independent artists, cultural archive">
     <meta name="robots" content="index, follow">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 
-<body>
+<body id="top" class="page-about">
 
      
 <header class="selected-header">
-
-<a class="logo-menu" href="../index.html" aria-label="Selected — Home">SELECTED.</a>
-
-    <nav class="navbar selected-navbar">
-
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#selectedMenu"
-            aria-controls="selectedMenu"
-            aria-expanded="false"
-            aria-label="Abrir menú">
-            <span class="navbar-toggler-icon"></span>
+    <a class="logo-menu" href="../index.html" aria-label="SELECTED — Home">SELECTED.</a>
+    <nav class="navbar selected-navbar" aria-label="Main navigation">
+        <button class="navbar-toggler" type="button" aria-controls="selectedMenu" aria-expanded="false" aria-label="Open navigation menu">
+            <span class="selected-hamburger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
         </button>
-
         <div class="collapse navbar-collapse selected-overlay" id="selectedMenu">
-
-            <button
-                class="selected-close"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#selectedMenu"
-                aria-label="Cerrar menú">
-                &times;
-            </button>
-
+            <button class="selected-close" type="button" aria-label="Close navigation menu">&times;</button>
             <ul class="navbar-nav selected-menu-links">
-                <li class="nav-item">
-                    <a class="nav-link" href="../index.html">home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./about.html">about</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./sessions.html">sessions</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./events.html">events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./journal.html">journal</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./contact.html">contact</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="../index.html">HOME</a></li>
+                <li class="nav-item"><a class="nav-link" href="./about.html">ABOUT</a></li>
+                <li class="nav-item"><a class="nav-link" href="./sessions.html">SESSIONS</a></li>
+                <li class="nav-item"><a class="nav-link" href="./archive.html">ARCHIVE / EVENTS</a></li>
+                <li class="nav-item"><a class="nav-link" href="./journal.html">JOURNAL</a></li>
+                <li class="nav-item"><a class="nav-link" href="./contact.html#contact">CONTACT</a></li>
             </ul>
-
+            <p class="selected-menu-note">INDEPENDENT CULTURAL ARCHIVE · EST. 2024</p>
         </div>
     </nav>
-
 </header>
 
 <div class="marquee">
@@ -88,231 +56,116 @@
     </p>
 </div>
 
-    <main>
+    <main class="about-page">
 
-        <!-- THE ART OF SELECTION -->
-
-        <section class="the-art-of-selection" data-aos="fade-up" data-aos-duration="650">
-
-            <div class="text-content">
-
-                <h1>THE ART OF SELECTION</h1>
-                <p>
-                    SELECTED is an independent platform dedicated to underground electronic
-                    culture. We discover and document artists, sounds, spaces and ideas that deserve to be heard.
-                </p>
-
+        <!-- ABOUT / HERO -->
+        <section class="about-hero" aria-labelledby="about-title">
+            <div class="about-hero__meta">
+                <span>[ ABOUT / 001 ]</span>
+                <span>INDEPENDENT CULTURAL ARCHIVE</span>
             </div>
+            <div class="about-hero__image" role="img" aria-label="Retrato editorial de una artista de la escena electrónica"></div>
+            <h1 id="about-title">ABOUT<span>®</span></h1>
+            <p class="about-hero__caption">A PLATFORM FOR<br>WHAT MOVES CULTURE.</p>
+            <span class="about-hero__index">[ 002 / 005 ]</span>
+        </section>
 
-            <figure>
-
-                <img src="../assets/dj tocando section 2.png" alt="DJ performing an electronic music set">
-
-                <figcaption>
-                    SPOT 001
-                </figcaption>
-
+        <!-- MANIFESTO -->
+        <section class="about-manifesto" id="manifesto">
+            <div class="about-section-label"><span>01 / MANIFESTO</span><span>THE ART OF SELECTION</span></div>
+            <div class="about-manifesto__grid">
+                <h2>OUR<br>MANIFESTO<span>+</span></h2>
+                <div class="about-manifesto__copy">
+                    <p class="about-lead">We believe that what deserves attention is worth discovering.</p>
+                    <p>SELECTED is an independent platform dedicated to underground electronic culture. We discover and document artists, sounds, spaces and ideas that deserve to be heard.</p>
+                    <p>In a world where music is everywhere, finding something meaningful can be harder than ever. We put human curation back at the centre of discovery.</p>
+                </div>
+            </div>
+            <figure class="about-manifesto__image">
+                <img src="../assets/dj tocando section 2.png" alt="DJ performing in an intimate electronic music space">
+                <figcaption>LISTEN CLOSELY. LOOK BEYOND.</figcaption>
             </figure>
-
         </section>
 
-
-        <!-- WHY SELECTED -->
-
-        <section class="about-section" data-aos="fade-up" data-aos-duration="650">
-
-            <div class="text-content">
-
-                <h2>WHY SELECTED</h2>
-
-                <p>
-                    In a world where music is everywhere, finding something meaningful can be harder than ever.
-                    SELECTED was created to put human curation back at the centre of discovery.
-                </p>
-
-                <p>
-                    We believe that selection is an art. It is about listening deeply, looking beyond the obvious
-                    and creating connections between people, music and culture.
-                </p>
-
+        <!-- PERSPECTIVE -->
+        <section class="about-perspective">
+            <div class="about-section-label"><span>02 / PERSPECTIVE</span><span>WHY SELECTED</span></div>
+            <div class="about-perspective__grid">
+                <h2>OUR<br>PERSPECTIVE<span>↗</span></h2>
+                <p>A space for discovery, documentation and dialogue. We highlight independent voices, experimental practices and the communities that keep electronic culture alive.</p>
             </div>
-
+            <div class="about-perspective__note">LESS NOISE. MORE MEANING. ALWAYS CURATED.</div>
         </section>
 
-
-       
-<!-- WHAT WE DO -->
-
-<section class="what-we-do" data-aos="fade-up" data-aos-duration="650">
-
-    <div class="text-content">
-        <h2>WHAT WE DO</h2>
-        <p>SELECTED creates spaces for discovery through:</p>
-    </div>
-
-    <div class="row row-cols-1 row-cols-md-3 g-4 about-cards">
-
-        <div class="col">
-            <article class="card h-100">
-                <div class="card-body">
-                    <span class="card-index">01 / SOUND</span>
-                    <h3 class="card-title">Audiovisual Sessions</h3>
-                    <p class="card-text">
-                        Live recordings with emerging and established selectors.
-                    </p>
-                </div>
-            </article>
-        </div>
-
-        <div class="col">
-            <article class="card h-100">
-                <div class="card-body">
-                    <span class="card-index">02 / PEOPLE</span>
-                    <h3 class="card-title">Conversations</h3>
-                    <p class="card-text">
-                        Interviews and stories behind the people making the music.
-                    </p>
-                </div>
-            </article>
-        </div>
-
-        <div class="col">
-            <article class="card h-100">
-                <div class="card-body">
-                    <span class="card-index">03 / SPACE</span>
-                    <h3 class="card-title">Listening Sessions</h3>
-                    <p class="card-text">
-                        Collective experiences built around listening.
-                    </p>
-                </div>
-            </article>
-        </div>
-
-        <div class="col">
-            <article class="card h-100">
-                <div class="card-body">
-                    <span class="card-index">04 / CULTURE</span>
-                    <h3 class="card-title">Workshops</h3>
-                    <p class="card-text">
-                        Knowledge, experimentation and creative exchange.
-                    </p>
-                </div>
-            </article>
-        </div>
-
-        <div class="col">
-            <article class="card h-100">
-                <div class="card-body">
-                    <span class="card-index">05 / COMMUNITY</span>
-                    <h3 class="card-title">Community Gatherings</h3>
-                    <p class="card-text">
-                        Bringing people together around music and culture.
-                    </p>
-                </div>
-            </article>
-        </div>
-
-        <div class="col">
-            <article class="card h-100">
-                <div class="card-body">
-                    <span class="card-index">06 / COLLABORATION</span>
-                    <h3 class="card-title">Collaborations</h3>
-                    <p class="card-text">
-                        Projects with artists, labels and independent cultural spaces.
-                    </p>
-                </div>
-            </article>
-        </div>
-
-    </div>
-
-</section>
-
-        <!-- OUR APPROACH -->
-
-        <section class="about-section" data-aos="fade-up" data-aos-duration="650">
-
-            <div class="text-content">
-
-                <h2>OUR APPROACH</h2>
-
-                <p>
-                    We don't aim to show everything. We look for what matters.
-                </p>
-
-                <p>
-                    From a forgotten record to an emerging artist, from a hidden room to a new sound —
-                    SELECTED exists to give attention to the things that might otherwise go unnoticed.
-                </p>
-
+        <!-- WHAT WE DO -->
+        <section class="about-what-we-do">
+            <div class="about-section-label"><span>03 / WHAT WE DO</span><span>[ 04 AREAS ]</span></div>
+            <div class="about-what-we-do__heading">
+                <h2>WHAT<br>WE DO</h2>
+                <p>We create connections between sound, people, spaces and ideas.</p>
             </div>
-
+            <div class="about-areas">
+                <article class="about-area about-area--sound">
+                    <span class="about-area__number">01</span><h3>SOUND</h3><p>Music, mixes and sonic explorations.</p><span class="about-area__arrow">↗</span>
+                </article>
+                <article class="about-area about-area--people">
+                    <span class="about-area__number">02</span><h3>PEOPLE</h3><p>Artists, DJs and creative voices.</p><span class="about-area__arrow">↗</span>
+                </article>
+                <article class="about-area about-area--space">
+                    <span class="about-area__number">03</span><h3>SPACE</h3><p>Clubs, studios and cultural places.</p><span class="about-area__arrow">↗</span>
+                </article>
+                <article class="about-area about-area--culture">
+                    <span class="about-area__number">04</span><h3>CULTURE</h3><p>Ideas, design and movements.</p><span class="about-area__arrow">↗</span>
+                </article>
+            </div>
         </section>
 
+        <!-- VISUAL STATEMENT -->
+        <section class="about-visual-statement" aria-label="Selected visual statement">
+            <img src="../assets/about/the art of selection.png" alt="An independent music space prepared for a live event">
+            <div class="about-visual-statement__overlay"><span>FIND THE SIGNAL.</span><span>FOLLOW WHAT MATTERS. ↗</span></div>
+        </section>
 
-        <!-- WHAT IS SELECTED -->
-
-        <section class="what-is-selected" data-aos="fade-up" data-aos-duration="650">
-
-            <div class="text-content">
-
-                <h2>SOUND. PEOPLE. SPACE. CULTURE.</h2>
-
-                <p>
-                    SELECTED is a living archive of electronic culture — built one selection at a time.
-                </p>
-
+        <!-- VALUES -->
+        <section class="about-values">
+            <div class="about-section-label"><span>04 / PRINCIPLES</span><span>OUR VALUES</span></div>
+            <h2>WHAT WE<br>STAND FOR<span>®</span></h2>
+            <div class="about-values__grid">
+                <article><span>01 / CURATION</span><h3>Less, but<br>meaningful.</h3><p>We choose with intention. Quality over quantity, always.</p></article>
+                <article><span>02 / INDEPENDENCE</span><h3>Outside<br>the obvious.</h3><p>We make room for new voices and independent perspectives.</p></article>
+                <article><span>03 / COMMUNITY</span><h3>Built<br>together.</h3><p>Culture grows through exchange, collaboration and shared experiences.</p></article>
+                <article><span>04 / CULTURE</span><h3>Always<br>evolving.</h3><p>We document the present while staying curious about what comes next.</p></article>
             </div>
+        </section>
 
+        <!-- CLOSING -->
+        <section class="about-closing">
+            <p>SELECTED IS A LIVING ARCHIVE<br>OF ELECTRONIC CULTURE.</p>
+            <span>BUILT ONE SELECTION AT A TIME. ↗</span>
         </section>
 
     </main>
 
-
-    <footer>
-
-        <h2>SELECTED</h2>
-
-        <p>A curated platform for sound, people, space and culture.</p>
-
-        <ul>
-
-            <li>
-                <a href="https://www.instagram.com">Instagram</a>
-            </li>
-
-            <li>
-                <a href="https://www.youtube.com">YouTube</a>
-            </li>
-
-            <li>
-                <a href="https://soundcloud.com">SoundCloud</a>
-            </li>
-
-            <li>
-                <a href="https://ra.co">RA</a>
-            </li>
-
-        </ul>
-
-        <p>© 2026 SELECTED. All rights reserved.</p>
-
-    </footer>
-
+      <footer class="site-footer">
+    <div class="site-footer__main">
+      <a class="site-footer__brand" href="../index.html" aria-label="SELECTED home">
+        <span>SELECT</span><span>ED<sup>®</sup></span>
+      </a>
+      <p class="site-footer__descriptor">INDEPENDENT<br>CULTURAL ARCHIVE.</p>
+      <a class="site-footer__connect" href="./contact.html#contact">LET'S CONNECT ↗</a>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© 2026 SELECTED. ALL RIGHTS RESERVED.</span>
+      <nav aria-label="Social media">
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a>
+        <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">SOUNDCLOUD ↗</a>
+      </nav>
+      <a class="site-footer__back" href="#top">BACK TO TOP ↑</a>
+    </div>
+  </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 650,
-            easing: "ease-out-cubic",
-            once: true,
-            offset: 70,
-            disable: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        });
-    </script>
-
+    <script src="../scripts/main.js"></script>
 </body>
 
 </html>
