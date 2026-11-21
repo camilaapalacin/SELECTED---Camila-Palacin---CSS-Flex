@@ -60,7 +60,7 @@ body {
     flex-direction: column;
     width: fit-content;
     color: $color-negro;
-    font: 400 clamp(4rem, 7.5vw, 8rem)/.73 $font-titulos;
+    font: 400 clamp(3.2rem, 5.4vw, 5.6rem)/.76 $font-titulos;
     letter-spacing: -.095em;
     text-decoration: none;
 
@@ -506,7 +506,7 @@ body {
       padding: 20px 0 34px;
     }
 
-    &__brand { font-size: clamp(3.6rem, 17vw, 5.5rem); }
+    &__brand { font-size: clamp(3rem, 13vw, 4.5rem); }
     &__descriptor { justify-self: end; font-size: .56rem; }
     &__connect { grid-column: 1 / -1; justify-self: start; }
     &__bottom {

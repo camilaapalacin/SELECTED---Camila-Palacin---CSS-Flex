@@ -1,0 +1,43 @@
+/* Verified visual fixes for Home, Sessions, Contact and shared footer */
+.home-page {
+  .home-hero { overflow: hidden; }
+  .home-hero__visual { inset: 8% 0 16%; width: 100%; overflow: visible; z-index: 0; }
+  .home-hero__chrome {
+    max-width: 100%;
+    font-size: clamp(5.5rem, 16.5vw, 18rem);
+    line-height: .82;
+    letter-spacing: -.09em;
+    transform-origin: center;
+    animation: chrome-drift-safe 14s ease-in-out infinite alternate;
+  }
+  .home-hero__topline, .home-hero__bottom { position: relative; z-index: 1; }
+}
+@keyframes chrome-drift-safe {
+  from { transform: perspective(1100px) rotateY(-8deg) rotateZ(-3deg) translate3d(-.5%, 0, 0) scaleX(.88); }
+  to { transform: perspective(1100px) rotateY(-4deg) rotateZ(-1deg) translate3d(.5%, -1%, 0) scaleX(.9); }
+}
+.marquee { width: 100%; overflow: hidden; white-space: nowrap; }
+.marquee p { display: flex; width: max-content; max-width: none; margin: 0; white-space: nowrap; animation: selected-marquee-seamless 12s linear infinite; will-change: transform; }
+.marquee p > span { display: block; flex: 0 0 auto; padding-right: 1.5rem; white-space: nowrap; }
+@keyframes selected-marquee-seamless { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.site-footer {
+  &__main { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr) minmax(0, 1fr); min-width: 0; }
+  &__brand { max-width: 100%; font-size: clamp(3.25rem, 5.1vw, 5.4rem); line-height: .78; letter-spacing: -.09em; white-space: nowrap; }
+  &__brand span { max-width: 100%; white-space: nowrap; }
+}
+@media (max-width: 760px) {
+  .home-page .home-hero__visual { inset: 15% 0 23%; }
+  .home-page .home-hero__chrome { font-size: clamp(4.5rem, 17vw, 8rem); }
+  .site-footer__main { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px 14px; }
+  .site-footer__brand { font-size: clamp(3rem, 10vw, 4.4rem); }
+  .site-footer__descriptor { justify-self: end; }
+  .site-footer__connect { grid-column: 1 / -1; justify-self: start; }
+}
+@media (max-width: 420px) {
+  .site-footer__main { grid-template-columns: 1fr; }
+  .site-footer__brand { font-size: clamp(2.8rem, 15vw, 3.8rem); }
+  .site-footer__descriptor { justify-self: start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee p, .home-page .home-hero__chrome { animation: none; }
+}
