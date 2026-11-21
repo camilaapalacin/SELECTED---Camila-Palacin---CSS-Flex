@@ -111,10 +111,10 @@
 
     &__visual {
       position: absolute;
-      inset: 12% -4% 15%;
+      inset: 8% -9% 12%;
       display: grid;
       place-items: center;
-      overflow: hidden;
+      overflow: visible;
       pointer-events: none;
       z-index: -1;
     }
@@ -143,8 +143,8 @@
       -webkit-background-clip: text;
       -webkit-text-stroke: 1px rgba(255,255,255,.58);
       filter: drop-shadow(0 12px 18px rgba(255,255,255,.18));
-      font: 400 clamp(7.5rem, 24vw, 24rem)/.72 $font-titulos;
-      letter-spacing: -.105em;
+      font: 400 clamp(6.5rem, 21vw, 21rem)/.76 $font-titulos;
+      letter-spacing: -.095em;
       animation: chrome-drift 14s ease-in-out infinite alternate;
     }
 
@@ -705,8 +705,8 @@
     .home-header { min-height: 68px; padding: 15px 18px; }
     .home-hero { min-height: 690px; min-height: calc(88svh - 68px); padding: 18px; }
     .home-hero__topline { font-size: .58rem; }
-    .home-hero__visual { inset: 20% -20% 26%; }
-    .home-hero__chrome { font-size: 29vw; transform: perspective(700px) rotateY(-12deg) rotateZ(-8deg); }
+    .home-hero__visual { inset: 15% -10% 24%; }
+    .home-hero__chrome { font-size: 25vw; transform: perspective(700px) rotateY(-10deg) rotateZ(-6deg); }
     .home-hero__bottom { grid-template-columns: 1fr auto; align-items: end; }
     .home-hero__statement h1 { font-size: clamp(2.1rem, 11vw, 3.8rem); }
     .home-hero__scroll { justify-self: end; font-size: .55rem; }

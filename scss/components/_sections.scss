@@ -429,3 +429,16 @@
   background-color: $color-claro;
   color: $color-negro;
 }
+
+
+// Sessions + Contact marquee: continuous three-repeat loop at a clearer pace.
+.sessions-page .marquee p,
+.contact-page .marquee p {
+  animation: selected-marquee-flow 11s linear infinite;
+  will-change: transform;
+}
+
+@keyframes selected-marquee-flow {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.333333%); }
+}

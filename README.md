@@ -51,9 +51,15 @@ scripts/
   main.js
 ```
 
-## Deployment
+## Live website
 
-Deployment to Vercel or Netlify and publication of the live URL in this README remain to be completed from the project owner's account. The repository must also be public and contain at least two descriptive commits before final submission.
+The project is deployed publicly on Netlify:
+
+**https://visionary-mermaid-f6217d.netlify.app/**
+
+## GitHub repository
+
+The source code is maintained in the GitHub repository connected to Netlify. Make sure the repository visibility is set to **Public** so the course tutor can access it.
 
 ## Homepage redesign
 The homepage (`index.html`) has been redesigned with a chrome-inspired hero, manifesto, four editorial area cards, latest sessions, upcoming selection, journal highlights and newsletter footer. Styles live in `scss/components/_home-redesign.scss` and are imported by `scss/main.scss`; the compiled stylesheet is `styles/style.css`.
@@ -73,12 +79,19 @@ The homepage (`index.html`) has been redesigned with a chrome-inspired hero, man
 
 Sessions and Journal filters are functional JavaScript filters. Session cards open the related native `details` panel through the URL hash. Journal stories open their reading view through the story hash. AOS remains included for scroll reveals, with native SCSS transitions on cards and links.
 
-## Delivery status
+## Delivery checklist
 
-Deployment to Vercel or Netlify and publication of the live URL in this README remain to be completed from the project owner's account. The repository must also be public and contain at least two descriptive commits before final submission.
+- [x] Public deployment on Netlify.
+- [x] Live website URL included in this README.
+- [ ] GitHub repository visibility set to **Public**.
+- [ ] At least two descriptive commits in the GitHub repository.
 
 ## Latest page builds — Sessions and Journal
 
 - Sessions: featured artists, six archive entries matching the existing project content, sound-category filters, expandable session notes and tracklist placeholders.
 - Journal: featured essay, filterable editorial cards, and five reading views with previous / next story navigation.
 - Audio files were not included in the supplied project assets, so no fake audio player has been wired in. Add audio sources later to enable playback.
+
+## Responsive corrections — November 2026
+
+A final responsive pass has been added for mobile widths (including 375px devices) and tablet widths. It prevents horizontal overflow, scales oversized display typography, changes dense card grids to single-column layouts on phones, adapts the Contact press/collaborations heading and newsletter form, keeps the Home chrome word inside the hero, improves the Sessions/Contact marquees and reduces the shared footer wordmark so it no longer clips. The source is `scss/components/_responsive-final.scss`, imported from `scss/main.scss`; the corresponding compiled rules are included in `styles/style.css`.
